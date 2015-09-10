@@ -235,4 +235,8 @@ input {
 }
 .hoteles {
     float:left;
+    margin-top: 10px;
+}
+.hoteles img{
+    width: 100%;
 }
