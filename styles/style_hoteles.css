@@ -1,11 +1,3 @@
-.comtenido {
-    padding-top: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 10px;
-
-}
-
 hr {
    
     width: 100%;
@@ -14,13 +6,49 @@ hr {
     
 }
 
-div.contenido > div {
+div#titulo {
     display: block;
     background-color: #607D8B;
     padding: 10px;
 }
 
-div.contenido div span{
+#titulo span{
     color: #FFFFFF;
 
+}
+
+.lista_hoteles {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    height: 100%;
+
+}
+
+.lista_hoteles div {
+    display: block;
+   height: 20%;;
+    margin-bottom: 15px;
+    background-color: #F44336;
+}
+.imagen {
+     float:left;
+    height: 100px;
+    width: 100px;
+    margin: 7px;
+    margin-right: 10px;
+}
+.lista_hoteles div a span{
+    display: block;
+    font-size: 20px;
+    
+}
+a:link{
+     text-decoration: none;
+}
+span{
+    
+    font-size: 15px;
+    color: #FFFFFF;
 }
