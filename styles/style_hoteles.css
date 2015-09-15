@@ -1,0 +1,26 @@
+.comtenido {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+
+}
+
+hr {
+   
+    width: 100%;
+    background-color:black;
+    height: 2px;
+    
+}
+
+div.contenido > div {
+    display: block;
+    background-color: #607D8B;
+    padding: 10px;
+}
+
+div.contenido div span{
+    color: #FFFFFF;
+
+}

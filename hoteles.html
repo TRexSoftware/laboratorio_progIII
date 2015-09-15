@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="./styles/style.css" >
-        <link rel="stylesheet" type="text/css" href="./styles/style_index.css" >
+         <link rel="stylesheet" type="text/css" href="./styles/style.css" >
+        <link rel="stylesheet" type="text/css" href="./styles/style_hoteles.css" >
         <script src="./jquery/jquery-2.1.4.min.js"></script>
         <script src="script.js"></script>
         <title>Reservar</title>
@@ -89,80 +88,10 @@
             </header>
         <!--Contenido-->
            <div class="contenido">
+               
+               <div><span>Hoteles Disponibles</span></div>
+               
+           </div>
             
-           <div class="slider">
-               <ul>
-                   <li><label>Buenos Aires</label><img src="./Provincias/BsAs.jpg" alt="bs as"></li>
-                   <li><label>Cordoba</label><img src="./Provincias/Cordoba.jpg" alt="cordoba"></li>
-                   <li><label>Bariloche</label><img src="./Provincias/Bariloche.jpg" alt="bariloche"></li>
-                   <li><label>Mar del Plata</label><img src="./Provincias/MarPlata.jpg" alt="mar del plata"></li>
-               </ul>
-           </div>    
-            <div id="datos_hotel">
-                <h2>Hoteles</h2>
-                <form action="" method="post" name="busqueda_hotel>">
-                    <div>
-                        <label>¿Donde quieres ir?</label><br>
-                        <input id="lugar_hotel" type="text" name="lugar" value="" maxlength="49" placeholder="Ingresar ciudad u hotel"><br>
-                        
-                        <label>¿En que fecha?</label><br>
-                        <input class="f_reserva" type="date" name="fecha_aloj">
-                        <input class="f_reserva" type="date" name="fecha_aloj"><br>
-                        <div>
-                            <label>Entrada</label>
-                            <label id="label_salida">Salida</label><br>
-                        </div>
-                        <label>Habitaciones</label>
-                        <label id="label_personas">Personas</label><br>
-                        <select name="habitaciones">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                        <select id="select_personas"name="personas">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                        </select>  
-                    </div>
-                    <div id="botones">
-                        <input type="submit" name="aceptar" value="Aceptar">
-                    </div>
-                </form>
-            </div>
-            <div class="slider">
-               <ul>
-                   <li><label>Buenos Aires</label><img src="./Provincias/BsAs.jpg" alt="bs as"></li>
-                   <li><label>Cordoba</label><img src="./Provincias/Cordoba.jpg" alt="cordoba"></li>
-                   <li><label>Bariloche</label><img src="./Provincias/Bariloche.jpg" alt="bariloche"></li>
-                   <li><label>Mar del Plata</label><img src="./Provincias/MarPlata.jpg" alt="mar del plata"></li>
-               </ul>
-           </div> 
-           <table class="hoteles">
-               <tr>
-                   <td><img src="./Hoteles/Bariloche/Huinid/1.jpg"></td>
-                   <td><img src="./Hoteles/Bariloche/Huinid/2.jpg"></td>
-                   <td><img src="./Hoteles/Bariloche/Huinid/3.jpg"></td>
-                   <td><img src="./Hoteles/Bariloche/Huinid/4.jpg"></td>
-               </tr>
-               <tr>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-               </tr>
-           </table>
-        </div>
-        
     </body>
 </html>
-
-
-
-
-
