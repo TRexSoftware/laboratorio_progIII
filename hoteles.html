@@ -64,7 +64,27 @@
                 </form>       
             </div>
         </div>
-        
+        <!--Popup Mi reserva -->
+        <div id=popup_mireserva class="popup-position">
+            <div id="popup_contenido_mireserva">
+                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');">
+                    <img class="close" src="./src/close.png"></a></p>
+                <h3>Mi reserva</h3>
+                <form action="index.html" method="post" name="mi_reserva">
+                    <div>
+                        <label>Nro solicitud compra</label><br>
+                        <input type="text" name="user" value="" maxlength="15"><br>
+                    </div>
+                    <div>
+                        <label>Email de compra</label><br>
+                        <input type="email" name="user" value="" maxlength="15"><br>
+                    </div>
+                    <div>
+                        <input type="submit" name="aceptar" value="Aceptar">
+                    </div>
+                </form>
+            </div>
+        </div>
         
         <!-- Menu -->
             <header>
@@ -79,7 +99,7 @@
                             <li><a href="hoteles.html"><img class="imgnav" src="src/hotel.png" alt="sign">Hoteles</a></li>
                         </div>
                         <div id="navright">
-                            <li><a href="reserva.html"><img class="imgnav" src="src/reserva.png" alt="reserva">Mi reserva</a></li>
+                            <li><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');"><img class="imgnav" src="src/reserva.png" alt="reserva">Mi reserva</a></li>
                             <li><a href="javascript:void(0)" onclick="visibilidad('popup_registro');"><img class="imgnav" src="src/registrarse.png" alt="sign">Registrarse</a></li>
                             <li><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');"><img class="imgnav" src="src/sesion.png" alt="login">Iniciar sesion</a></li>
                         </div>

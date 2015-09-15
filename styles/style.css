@@ -117,7 +117,7 @@ header div ul li a{
     from {opacity: 0; }
     to { opacity: 1;}
 }
-#popup_contenido_sesion h3,#popup_contenido_registro h3{
+#popup_contenido_sesion h3,#popup_contenido_registro h3, #popup_contenido_mireserva h3{
     color: #2196F3;
 }
 #popup_contenido_registro{ 
@@ -127,6 +127,15 @@ header div ul li a{
     border-radius: 5px;
     animation-name: aparecer;
     animation-duration: 1s;
+}
+#popup_contenido_mireserva{
+    width: 300px; margin: 108px auto; text-align: left;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    animation-name: aparecer;
+    animation-duration: 1s;
+
 }
 .close {
     width: 20px;
