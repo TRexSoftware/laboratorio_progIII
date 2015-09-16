@@ -28,9 +28,11 @@ div#titulo {
 
 .lista_hoteles div {
     display: block;
-   height: 20%;;
+    overflow:hidden;
+    height: 20%;;
     margin-bottom: 15px;
     background-color: #F44336;
+
 }
 .imagen {
      float:left;
