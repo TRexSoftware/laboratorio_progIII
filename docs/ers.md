@@ -10,11 +10,11 @@
 ### INTRODUCCIÓN
 
 Este documento es una Especificación de Requisitos de Software (ERS) para el sistema de reservas de hoteles. 
-El desarrollo de dicho contenido ha sido elaborado con participacipon conjunta de los usuarios responsables de los hoteles.
+El desarrollo de dicho contenido ha sido elaborado con participación conjunta de los usuarios responsables de los hoteles.
 
 ### Propósito
 
-La especificación tiene como fin comunicat las funcionalidades y restricciones del sistema que se desea construir.
+La especificación tiene como fin comunicar las funcionalidades y restricciones del sistema que se desea construir.
 La documentación está dirigida al equipo de desarrollo, al grupo de calidad, 
 y a la gerencia de sus respectivos hoteles. Este documento forma parte de un canal de información entre las personas implicadas.
 
