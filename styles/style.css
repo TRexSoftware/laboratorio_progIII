@@ -61,7 +61,7 @@ header div{
     margin-right: 10px;
     margin-top: 5px;
     padding: 0px;
-    background-image: url("src/dino.png");
+    background-image: url("../src/dino.png");
     width: 35px;
     height:35px;
     animation: play 1s steps(3) infinite;
