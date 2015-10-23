@@ -2,187 +2,29 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="./styles/style.css" >
-        <link rel="stylesheet" type="text/css" href="./styles/style_index.css" >
-        <script src="./jquery/jquery-2.1.4.min.js"></script>
-        <script src="script.js"></script>
-        <title>Reservar</title>
-       
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="resources/css/bootstrap.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <title>Reservar</title>   
     </head>
     <body>
-        <!--Popup-sesion-->
-        <div id="popup_sesion" class="popup-position">
-            <div id="popup_contenido_sesion">
-                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');">
-                    <img class="close" src="./src/close.png"></a></p>
-                <h3>Inicio Sesion</h3>
-                <form action="index.html" method="post" name="inicio_sesion">
-                    <div>
-                        <label>Usuario</label><br>
-                        <input type="text" name="user" value="" maxlength="20"><br>
-                    </div>
-                    <div>
-                        <label>Contraseña</label><br>
-                        <input type="password" name="password" value="" maxlength="15"><br>
-                    </div>
-                    <div>
-                        <input type="submit" name="aceptar" value="Aceptar">
-                    </div>
-                </form>
-            </div>
-        </div>
-        
-        <!--Popup-registro-->
-        <div id=popup_registro class="popup-position">
-            <div id="popup_contenido_registro">
-                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_registro');">
-                    <img class="close" src="./src/close.png"></a></p>
-                <h3>Registrarse</h3>
-                <form action="index.html" method="post" name="registro_usuario">
-                    <div>
-                        <label>Nombre</label><br>
-                        <input type="text" name="user" value="" maxlength="15"><br>
-                    </div>
-                    <div>
-                        <label>Apellido</label><br>
-                        <input type="text" name="user" value="" maxlength="15"><br>
-                    </div>
-                    <div>
-                        <label>Correo Electronico</label><br>
-                        <input type="email" value="" maxlength="15"><br>
-                    </div>
-                    <div>
-                        <label>Usuario</label><br>
-                        <input id="user" type="text" name="user" value="" maxlength="20"><br>
-                    </div>
-                    <div>
-                        <label>Contraseña</label><br>
-                        <input id="password" type="password" name="password" value="" maxlength="15"><br>
-                    </div>
-                    <div>
-                        <input type="submit" name="aceptar" value="Aceptar">
-                    </div>
-                </form>       
-            </div>
-        </div>
-        <!--Popup Mi reserva -->
-        <div id=popup_mireserva class="popup-position">
-            <div id="popup_contenido_mireserva">
-                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');">
-                    <img class="close" src="./src/close.png"></a></p>
-                <h3>Mi reserva</h3>
-                <form action="index.html" method="post" name="mi_reserva">
-                    <div>
-                        <label>Nro solicitud compra</label><br>
-                        <input type="text" name="user" value="" maxlength="15"><br>
-                    </div>
-                    <div>
-                        <label>Email de compra</label><br>
-                        <input type="email" name="user" value="" maxlength="15"><br>
-                    </div>
-                    <div>
-                        <input type="submit" name="aceptar" value="Aceptar">
-                    </div>
-                </form>
-            </div>
-        </div>
-        
-       <!-- Menu -->
-            <header>
-                <div class="logos">
-                    <a href="index.html"><img id="logo" src="./src/reservar.com.png"></a>
-                    <div id="rex"></div>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-header">
+                    <span class="sr-only">Toggle navigation</span>
                 </div>
-                <div class="menu">
-                    <ul class="fade">
-                        <div id="navleft">
-                            <li><a href="index.html"><img class="imgnav" src="src/home.png" alt="sign">Home</a></li>    
-                            <li><a href="hoteles.html"><img class="imgnav" src="src/hotel.png" alt="sign">Hoteles</a></li>
-                        </div>
-                        <div id="navright">
-                            <li><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');"><img class="imgnav" src="src/reserva.png" alt="reserva">Mi reserva</a></li>
-                            <li><a href="javascript:void(0)" onclick="visibilidad('popup_registro');"><img class="imgnav" src="src/registrarse.png" alt="sign">Registrarse</a></li>
-                            <li><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');"><img class="imgnav" src="src/sesion.png" alt="login">Iniciar sesion</a></li>
-                        </div>
+                <div class="collapse navbar-collapse navHeaderCollapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
                     </ul>
                 </div>
-            </header>
-        <!--Contenido-->
-           <div class="contenido">
-            
-           <div class="slider">
-               <ul>
-                   <li><label>Buenos Aires</label><img src="./Provincias/BsAs.jpg" alt="bs as"></li>
-                   <li><label>Cordoba</label><img src="./Provincias/Cordoba.jpg" alt="cordoba"></li>
-                   <li><label>Bariloche</label><img src="./Provincias/Bariloche.jpg" alt="bariloche"></li>
-                   <li><label>Mar del Plata</label><img src="./Provincias/MarPlata.jpg" alt="mar del plata"></li>
-               </ul>
-           </div>    
-            <div id="datos_hotel">
-                <h2>Hoteles</h2>
-                <form action="" method="post" name="busqueda_hotel>">
-                    <div>
-                        <label>¿Donde quieres ir?</label><br>
-                        <input id="lugar_hotel" type="text" name="lugar" value="" maxlength="49" placeholder="Ingresar ciudad u hotel"><br>
-                        
-                        <label>¿En que fecha?</label><br>
-                        <input class="f_reserva" type="date" name="fecha_aloj">
-                        <input class="f_reserva" type="date" name="fecha_aloj"><br>
-                        <div>
-                            <label>Entrada</label>
-                            <label id="label_salida">Salida</label><br>
-                        </div>
-                        <label>Habitaciones</label>
-                        <label id="label_personas">Personas</label><br>
-                        <select name="habitaciones">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                        <select id="select_personas"name="personas">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                        </select>  
-                    </div>
-                    <div id="botones">
-                        <input type="submit" name="aceptar" value="Aceptar">
-                    </div>
-                </form>
             </div>
-            <div class="slider">
-               <ul>
-                   <li><label>Buenos Aires</label><img src="./Provincias/BsAs.jpg" alt="bs as"></li>
-                   <li><label>Cordoba</label><img src="./Provincias/Cordoba.jpg" alt="cordoba"></li>
-                   <li><label>Bariloche</label><img src="./Provincias/Bariloche.jpg" alt="bariloche"></li>
-                   <li><label>Mar del Plata</label><img src="./Provincias/MarPlata.jpg" alt="mar del plata"></li>
-               </ul>
-           </div> 
-           <table class="hoteles">
-               <tr>
-                   <td><img src="./Hoteles/Bariloche/Huinid/1.jpg"></td>
-                   <td><img src="./Hoteles/Bariloche/Huinid/2.jpg"></td>
-                   <td><img src="./Hoteles/Bariloche/Huinid/3.jpg"></td>
-                   <td><img src="./Hoteles/Bariloche/Huinid/4.jpg"></td>
-               </tr>
-               <tr>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-               </tr>
-           </table>
-        </div>
-        
+        </nav>
     </body>
 </html>
-
-
-
-
-
