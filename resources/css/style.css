@@ -19,7 +19,13 @@ ul.nav > li > a:hover {
 .navbar-custom a {
     color: white;
 }
-
+.icon-nav {
+    height: 25px;
+    width: 25px;
+    padding: 0px;
+    margin-right: 5px;
+    vertical-align: middle;
+    }
 footer {
     background: #2196F3;
     position: fixed;
