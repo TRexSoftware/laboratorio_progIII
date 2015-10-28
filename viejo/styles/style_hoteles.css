@@ -1,9 +1,9 @@
 hr {
-   
+
     width: 100%;
     background-color:black;
     height: 2px;
-    
+
 }
 
 div#titulo {
@@ -42,13 +42,13 @@ div#titulo {
 .lista_hoteles div a span{
     display: block;
     font-size: 20px;
-    
+
 }
 a:link{
      text-decoration: none;
 }
 span{
-    
+
     font-size: 15px;
     color: #FFFFFF;
 }
