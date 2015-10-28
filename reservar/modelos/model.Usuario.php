@@ -7,11 +7,11 @@ public function __construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion
     $this->pass = $pass;
 
 }
-public function __construct($email,$pass){
+/*public function __construct($email,$pass){
     $this->email = $email;
     $this->pass = $pass;
 
-}
+}*/
 public function buscar(){
 	//necesitamos saber si existe o no existe
 	$encontro = false;

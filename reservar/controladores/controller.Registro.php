@@ -1,5 +1,6 @@
 <?php
 require_once("../inc.includes.php");
+
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $sexo = $_POST['sexo'];

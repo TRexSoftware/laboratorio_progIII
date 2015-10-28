@@ -29,61 +29,6 @@
                 <div class="collapse navbar-collapse navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
 
-
-                         <li><a href="#"><img class= "icon-nav" src="../resources/img/sesion.png">Iniciar Sesión</a></li>
-                           <form action="controladores/controller.Sesion.php" method="post" name="inicio_sesion">
-                                <div>
-                                    <label>Usuario</label><br>
-                                    <input type="text" name="user" value="" maxlength="20"><br>
-                                </div>
-                                <div>
-                                    <label>Contraseña</label><br>
-                                    <input type="password" name="password" value="" maxlength="15"><br>
-                                </div>
-                                <div>
-                                    <input type="submit" name="aceptar" value="Aceptar">
-                                </div>
-                            </form>
-
-                       <li><a href="#"><img class= "icon-nav" src="../resources/img/registrarse.png">Registrarse</a></li>
-                        <form action="controladores/controller.Registro.php" method="post" name="registro_usuario">
-                            <div>
-                                <label>Nombre</label><br>
-                                <input type="text" name="nombre" value="" maxlength="15"><br>
-                            </div>
-                            <div>
-                                <label>Apellido</label><br>
-                                <input type="text" name="apellido" value="" maxlength="15"><br>
-                            </div>
-                            <div>
-                                <label>Sexo</label><br>   <!-- poner radio button -->
-                                <input type="text" name="sexo" value="" maxlength="1"><br>
-                            </div>
-                            <div>
-                                <label>Fecha de Nacimiento</label><br>
-                                <input type="date" name="fecha_nacimiento" value=""><br>
-                            </div>
-                            <div>
-                                <label>Direccion</label><br>
-                                <input type="text" name="direccion" value="" maxlength="30"><br>
-                            </div>
-                            <div>
-                                <label>Correo Electronico</label><br>
-                                <input type="email" name="email" value="" maxlength="15"><br>
-                            </div>
-                            <div>
-                                <label>Usuario</label><br>
-                                <input id="user" type="text" name="user" value="" maxlength="20"><br>
-                            </div>
-                            <div>
-                                <label>Contraseña</label><br>
-                                <input id="password" type="password" name="password" value="" maxlength="15"><br>
-                            </div>
-                            <div>
-                                <input type="submit" name="aceptar" value="Aceptar">
-                            </div>
-                        </form>
-
             <!-- Se debe activar cuando el usuario haya iniciado sesion
                         <li><a href="#"><img class= "icon-nav" src="../resources/img/reserva.png">Mi Reserva</a></li>
                         <form action="controladores/controller.Reserva.php" method="post" name="mi_reserva">
@@ -104,6 +49,60 @@
                 </div>
             </div>
         </nav>
+        
+        <li><a href="#"><img class= "icon-nav" src="../resources/img/sesion.png">Iniciar Sesión</a></li>
+        <form action="controladores/controller.Sesion.php" method="post" name="inicio_sesion">
+            <div>
+                <label>Usuario</label><br>
+                <input type="text" name="user" value="" maxlength="20"><br>
+            </div>
+            <div>
+                <label>Contraseña</label><br>
+                <input type="password" name="password" value="" maxlength="15"><br>
+            </div>
+            <div>
+                <input type="submit" name="aceptar" value="Aceptar">
+            </div>
+        </form>
+
+        <li><a href="#"><img class= "icon-nav" src="../resources/img/registrarse.png">Registrarse</a></li>
+        <form action="controladores/controller.Registro.php" method="post" name="registro_usuario">
+        <div>
+            <label>Nombre</label><br>
+            <input type="text" name="nombre" value="" maxlength="15"><br>
+        </div>
+        <div>
+            <label>Apellido</label><br>
+            <input type="text" name="apellido" value="" maxlength="15"><br>
+        </div>
+        <div>
+            <label>Sexo</label><br>   <!-- poner radio button -->
+            <input type="text" name="sexo" value="" maxlength="1"><br>
+        </div>
+        <div>
+            <label>Fecha de Nacimiento</label><br>
+            <input type="date" name="fecha_nacimiento" value=""><br>
+        </div>
+        <div>
+            <label>Direccion</label><br>
+            <input type="text" name="direccion" value="" maxlength="30"><br>
+        </div>
+        <div>
+            <label>Correo Electronico</label><br>
+            <input type="email" name="email" value="" maxlength="15"><br>
+        </div>
+        <div>
+            <label>Usuario</label><br>
+            <input id="user" type="text" name="user" value="" maxlength="20"><br>
+        </div>
+        <div>
+            <label>Contraseña</label><br>
+            <input id="password" type="password" name="password" value="" maxlength="15"><br>
+        </div>
+        <div>
+            <input type="submit" name="aceptar" value="Aceptar">
+        </div>
+        </form>
 
         <div class="container">
             <div class="page-header center-block">
