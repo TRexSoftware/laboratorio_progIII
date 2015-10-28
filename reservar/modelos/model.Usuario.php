@@ -1,8 +1,13 @@
 <?php
 class Usuario extends Persona {
-private $pass;
+private $email,$pass;
+public function __construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion,$email,$pass){
+    parent::_construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion);
+    $this->email = $email;
+    $this->pass = $pass;
+
+}
 public function __construct($email,$pass){
-    //parent::_construct($email,$nombre,$apellido,$sexo,$fecha_nacimiento,$direccion);
     $this->email = $email;
     $this->pass = $pass;
 
@@ -15,8 +20,7 @@ public function buscar(){
 	$sql = "select *, date_format(fechanacimiento, '%d/%m/%Y') as fechanacimiento from tusuario where(email = '$this->email' AND pass = '$this->pass')";
 	$datos_desordenados = $datos->consultar($sql);
 	if($columna = $datos->ordenarConsulta($datos_desordenados)){
-		$this->email = $columna['email'];
-        $this->nombre = $columna['nombre'];
+		$this->nombre = $columna['nombre'];
 		$this->apellido = $columna['apellido'];
 		$this->sexo = $columna['sexo'];
 		$this->fecha_nacimiento = $columna['fechanacimiento'];
