@@ -1,10 +1,10 @@
 <?php
-require_once ("../inc.includes");
+require_once ("../inc.includes.php");
 abstract class Persona{
 private $nombre,$apellido,$sexo,$fecha_nacimiento,$email,$direccion;
 
-public function __contruct($email,$nombre,$apellido,$sexo,$fecha_nacimiento,$direccion){
-	$this->email = $email;
+public function __contruct($dni,$nombre,$apellido,$sexo,$fecha_nacimiento,$direccion){
+    $this->dni = $dni;
     $this->nombre = $nombre;
 	$this->apellido = $apellido;
 	$this->sexo = $sexo;
@@ -14,9 +14,8 @@ public function __contruct($email,$nombre,$apellido,$sexo,$fecha_nacimiento,$dir
 }
 
 public function __destruct(){}
-
-public function get_email{
-	return $this->email;
+public function get_dni{
+	return $this->dni;
 }
 public function get_nombre{
 	return $this->nombre;
