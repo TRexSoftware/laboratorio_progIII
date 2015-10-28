@@ -28,9 +28,67 @@
                 </form>
                 <div class="collapse navbar-collapse navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
-                       <li><a href="reservar/controladores/controller.Sesion.php"><img class= "icon-nav" src="resources/img/sesion.png">Iniciar Sesión</a></li>
-                       <li><a href="#"><img class= "icon-nav" src="resources/img/registrarse.png">Registrarse</a></li>
-                        <li><a href="#"><img class= "icon-nav" src="resources/img/reserva.png">Mi Reserva</a></li>
+
+
+                         <li><a href="#"><img class= "icon-nav" src="../resources/img/sesion.png">Iniciar Sesión</a></li>
+                           <form action="reservar/controladores/controller.Sesion.php" method="post" name="inicio_sesion">
+                                <div>
+                                    <label>Usuario</label><br>
+                                    <input type="text" name="user" value="" maxlength="20"><br>
+                                </div>
+                                <div>
+                                    <label>Contraseña</label><br>
+                                    <input type="password" name="password" value="" maxlength="15"><br>
+                                </div>
+                                <div>
+                                    <input type="submit" name="aceptar" value="Aceptar">
+                                </div>
+                            </form>
+
+
+                       <li><a href="#"><img class= "icon-nav" src="../resources/img/registrarse.png">Registrarse</a></li>
+                        <form action="index.html" method="post" name="registro_usuario">
+                            <div>
+                                <label>Nombre</label><br>
+                                <input type="text" name="user" value="" maxlength="15"><br>
+                            </div>
+                            <div>
+                                <label>Apellido</label><br>
+                                <input type="text" name="user" value="" maxlength="15"><br>
+                            </div>
+                            <div>
+                                <label>Correo Electronico</label><br>
+                                <input type="email" value="" maxlength="15"><br>
+                            </div>
+                            <div>
+                                <label>Usuario</label><br>
+                                <input id="user" type="text" name="user" value="" maxlength="20"><br>
+                            </div>
+                            <div>
+                                <label>Contraseña</label><br>
+                                <input id="password" type="password" name="password" value="" maxlength="15"><br>
+                            </div>
+                            <div>
+                                <input type="submit" name="aceptar" value="Aceptar">
+                            </div>
+                        </form>
+
+
+                        <li><a href="#"><img class= "icon-nav" src="../resources/img/reserva.png">Mi Reserva</a></li>
+                        <form action="index.html" method="post" name="mi_reserva">
+                            <div>
+                                <label>Nro solicitud compra</label><br>
+                                <input type="text" name="user" value="" maxlength="15"><br>
+                            </div>
+                            <div>
+                                <label>Email de compra</label><br>
+                                <input type="email" name="user" value="" maxlength="15"><br>
+                            </div>
+                            <div>
+                                <input type="submit" name="aceptar" value="Aceptar">
+                            </div>
+                        </form>
+
                     </ul>
                 </div>
             </div>
