@@ -12,5 +12,8 @@ function visibilidad(id) {
 	if(e.style.display == 'block')
 	  e.style.display = 'none';
      else
-      e.style.display = 'block';
+     {
+        e.style.zIndex = '5';
+         e.style.display = 'block';
+     }
 }
