@@ -1,5 +1,5 @@
 <?php
-require_once("../inc.includes.php");
+include ("../inc.includes.php");
 
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];

@@ -1,4 +1,5 @@
 <?php
+include ("../inc.includes.php");
 class Usuario extends Persona {
 private $email,$pass;
 public function __construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion,$email,$pass){
@@ -15,7 +16,7 @@ public function __construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion
 public function buscar(){
 	//necesitamos saber si existe o no existe
 	$encontro = false;
-	$datos = new class.MySQL();
+	$datos = new BaseDatos();
 						//formato fecha dd/mm/aa
 	$sql = "select *, date_format(fechanacimiento, '%d/%m/%Y') as fechanacimiento from tusuario where(email = '$this->email' AND pass = '$this->pass')";
 	$datos_desordenados = $datos->consultar($sql);
@@ -36,12 +37,13 @@ public function buscar(){
 public function insertar(){
 	$datos = new BaseDatos();
 	$this->fecha_nacimiento = $datos->fechabd($this->fecha_nacimiento);
-	$sql = "insert into tusuario (nombre,apellido,sexo,fechanacimiento,direccion,pass)
+	$sql = "insert into tusuario (nombre,apellido,sexo,fechanacimiento,direccion,email,pass)
 				values ('$this->nombre',
 						'$this->apellido',
 						'$this->sexo',
 						'$this->fecha_nacimiento',
 						'$this->direccion',
+                        '$this->email',
                         '$this->pass')";
 	$datos->ejecutar($sql);
 	$datos->cerrarconexion();

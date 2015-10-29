@@ -5,7 +5,7 @@ private $conexion;
 public function __construct(){
 	$servidor = "localhost";
 	$usuario = "root";
-	$clave = "";
+	$clave = "slash";
 	$base = "reservar";
 
 	$this->conexion = mysql_connect($servidor,$usuario,$clave);

@@ -1,5 +1,5 @@
 <?php
-require_once ("../inc.includes.php");
+include ("../inc.includes.php");
 abstract class Persona{
 private $nombre,$apellido,$sexo,$fecha_nacimiento,$email,$direccion;
 

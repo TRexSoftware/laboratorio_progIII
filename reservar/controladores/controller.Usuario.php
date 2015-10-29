@@ -1,5 +1,5 @@
 <?php
-require_once("../inc.includes.php");
+include ("../inc.includes.php");
 session_start();
 
 $email = $_POST['email'];

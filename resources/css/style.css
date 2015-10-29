@@ -3,7 +3,7 @@ body {
 }
 
 .navbar-custom {
-    background-color: #2196F3;
+   background: #2196F3;
     color: white;
 }
 
@@ -44,4 +44,64 @@ footer a {
 
 .page-header {
     width: 50%;
+}
+
+
+.popup-position{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+}
+#popup_contenido_sesion{
+    width: 300px; margin: 108px auto; text-align: left;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    animation-name: aparecer;
+    animation-duration: 1s;
+}
+@keyframes aparecer {
+    from {opacity: 0; }
+    to { opacity: 1;}
+}
+#popup_contenido_sesion h3,#popup_contenido_registro h3, #popup_contenido_mireserva h3{
+    color: #2196F3;
+}
+#popup_contenido_registro{
+    width: 300px; margin: 108px auto; text-align: left;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    animation-name: aparecer;
+    animation-duration: 1s;
+}
+#popup_contenido_mireserva{
+    width: 300px; margin: 108px auto; text-align: left;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    animation-name: aparecer;
+    animation-duration: 1s;
+
+}
+.close {
+    width: 20px;
+    height: 20px;
+
+}
+.close:hover {
+    background-color: black;
+    border-radius: 10px;
+}
+#logo{
+    margin-left: 20px;
+    width: 250px;
+    height: 30px;
+    margin-top:
+        0px;
+
 }
