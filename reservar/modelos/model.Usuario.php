@@ -2,21 +2,21 @@
 include ("model.Persona.php");
 class Usuario extends Persona {
 private $email,$pass;
-public function __construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion,$email,$pass){
-    parent::_construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion);
+//public function __construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion,$email,$pass){
+//    parent::_construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion);
+//    $this->email = $email;
+//    $this->pass = $pass;
+//
+//}
+public function __construct($email,$pass){
     $this->email = $email;
     $this->pass = $pass;
 
 }
-/*public function __construct($email,$pass){
-    $this->email = $email;
-    $this->pass = $pass;
-
-}*/
 public function buscar(){
 	//necesitamos saber si existe o no existe
 	$encontro = false;
-	$datos = new BaseDatos();
+	$datos = $GLOBALS['datos'];
 						//formato fecha dd/mm/aa
 	$sql = "select *, date_format(fechanacimiento, '%d/%m/%Y') as fechanacimiento from tusuario where(email = '$this->email' AND pass = '$this->pass')";
 	$datos_desordenados = $datos->consultar($sql);
@@ -35,8 +35,8 @@ public function buscar(){
 }
 
 public function insertar(){
-	$datos = new BaseDatos();
-	$this->fecha_nacimiento = $datos->fechabd($this->fecha_nacimiento);
+	global $datos;
+    $this->fecha_nacimiento = $datos->fechabd($this->fecha_nacimiento);
 	$sql = "insert into tusuario (nombre,apellido,sexo,fechanacimiento,direccion,email,pass)
 				values ('$this->nombre',
 						'$this->apellido',
@@ -50,7 +50,7 @@ public function insertar(){
 }
 
 public function modificar(){
-	$datos = new BaseDatos();
+    global $datos;
 	$sql = "update tusuario set nombre='$this->nombre',
 								apellido='$this->apellido',
 								sexo='$this->sexo',
@@ -63,7 +63,7 @@ public function modificar(){
 }
 
 public function eliminar(){
-	$datos = new BaseDatos();
+    global $datos;
 	$sql = "delete from tusuario where(email='$this->email')";
 
 }

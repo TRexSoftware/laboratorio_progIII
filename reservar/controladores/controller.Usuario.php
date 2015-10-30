@@ -1,26 +1,26 @@
 <?php
+class Usuario_Controller {
+public function sesion(){
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
 
-//$email = $_POST['email'];
-//$pass = $_POST['pass'];
-//
-//$persona = new Usuario($email,$pass);
-//$existe = $persona->buscar();
-//if($existe){
-//    $_SESSION['user'] = $usuario;
-// //   header("Location: .php");//poner vista
-//
-//}
-//else{
-//    $template = new TemplatePower("../templates/index.html");
-//	$template->prepare();
-//	$template->gotoBlock("_ROOT");
-//    $template->newBlock("ingreso");
-//    $template->assign("user", "Usuario no existe");
-//    $template->assign("pass", "Error de contraseña");
-//    echo $template->getOutputContent();
-//
-//    //header("Location: index.php");
-//}
+    $persona = new Usuario($email,$pass);
+    $existe = $persona->buscar();
+    if($existe){
+        $_SESSION['user'] = $email;
+       $template = new TemplatePower("templates/indexUser.html");
+       $template->prepare();
+	   $template->gotoBlock("_ROOT");
+       $webapp=$template->getOutputContent();
+        echo $webapp;
+    }
+    else{
+        $template = new TemplatePower("templates/index.html");
+        die("Error de inicio de Sesion");
+        echo $template->getOutputContent();
 
+    }
+}
 
+}
 ?>

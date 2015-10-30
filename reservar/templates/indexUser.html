@@ -10,27 +10,6 @@
         <title>Reservar</title>
     </head>
     <body>
-       <!-- PopUp SESION -->
-        <div id="popup_sesion" class="popup-position">
-            <div id="popup_contenido_sesion">
-                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');">
-                    <img class="close" src="../resources/img/close.png"></a></p>
-                <h3>Inicio Sesion</h3>
-                <form action="index.php?action=Usuario::sesion" method="post" name="inicio_sesion">
-                    <div>
-                        <label>Email</label><br>
-                        <input type="text" name="email" value="" maxlength="50"><br>
-                    </div>
-                    <div>
-                        <label>Contraseña</label><br>
-                        <input type="password" name="password" value="" maxlength="15"><br>
-                    </div>
-                    <div>
-                        <input type="submit" name="aceptar" value="Aceptar">
-                    </div>
-                </form>
-            </div>
-        </div>
 
        <!-- PopUp REGISTRO -->
       <div id=popup_registro class="popup-position">
@@ -38,7 +17,7 @@
                 <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_registro');">
                         <img class="close" src="../resources/img/close.png"></a></p>
                 <h3>Registrarse</h3>
-                <form action="index.php?action=Usuario::alta" method="post" name="registro_usuario">
+                <form action="index.php?action=Usuario::alta()" method="post" name="registro_usuario">
                     <div>
                         <label>Nombre</label><br>
                         <input type="text" name="nombre" value="" maxlength="15"><br>
@@ -115,7 +94,6 @@
                 </form>
                 <div class="collapse navbar-collapse navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');"><img class="icon-nav" src="../resources/img/sesion.png" alt="login">Iniciar sesion</a></li>
 
                         <li><a href="javascript:void(0)" onclick="visibilidad('popup_registro');"><img class="icon-nav" src="../resources/img/registrarse.png" alt="sign">Registrarse</a></li>
 

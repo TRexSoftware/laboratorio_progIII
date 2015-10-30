@@ -2,7 +2,7 @@
 session_start();
 include("inc.includes.php");
 
-$db = new BaseDatos();
+$datos = new BaseDatos();
 
 // INSTANCIA CLASES Y METODOS |
 //isset determina si una variable esta definida o es null
