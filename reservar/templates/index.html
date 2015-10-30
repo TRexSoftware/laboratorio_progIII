@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <script src="../../resources/js/script.js"></script>
-        <link rel="stylesheet" href="../../resources/css/bootstrap.css">
-        <link rel="stylesheet" href="../../resources/css/style.css">
+        <script src="../resources/js/script.js"></script>
+        <link rel="stylesheet" href="../resources/css/bootstrap.css">
+        <link rel="stylesheet" href="../resources/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <title>Reservar</title>
     </head>
@@ -14,9 +14,9 @@
         <div id="popup_sesion" class="popup-position">
             <div id="popup_contenido_sesion">
                 <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');">
-                    <img class="close" src="../../resources/img/close.png"></a></p>
+                    <img class="close" src="../resources/img/close.png"></a></p>
                 <h3>Inicio Sesion</h3>
-                <form action="index.html" method="post" name="inicio_sesion">
+                <form action="index.php" method="post" name="inicio_sesion">
                     <div>
                         <label>Usuario</label><br>
                         <input type="text" name="user" value="" maxlength="20"><br>
@@ -36,7 +36,7 @@
       <div id=popup_registro class="popup-position">
             <div id="popup_contenido_registro">
                 <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_registro');">
-                        <img class="close" src="../../resources/img/close.png"></a></p>
+                        <img class="close" src="../resources/img/close.png"></a></p>
                 <h3>Registrarse</h3>
                 <form action="index.php?action=usuario::alta()" method="post" name="registro_usuario">
                     <div>
@@ -82,9 +82,9 @@
         <div id=popup_mireserva class="popup-position">
             <div id="popup_contenido_mireserva">
                 <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');">
-                    <img class="close" src="../../resources/img/close.png"></a></p>
+                    <img class="close" src="../resources/img/close.png"></a></p>
                 <h3>Mi reserva</h3>
-                <form action="index.html" method="post" name="mi_reserva">
+                <form action="index.php" method="post" name="mi_reserva">
                     <div>
                         <label>Nro solicitud compra</label><br>
                         <input type="text" name="user" value="" maxlength="15"><br>
@@ -105,7 +105,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <span class="sr-only">Toggle navigation</span>
-                    <a class="navbar-brand" href="index.html"><img id="logo" src="../../resources/img/logo.png"></a>
+                    <a class="navbar-brand" href="index.php"><img id="logo" src="../resources/img/logo.png"></a>
                 </div>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
@@ -115,11 +115,11 @@
                 </form>
                 <div class="collapse navbar-collapse navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');"><img class="icon-nav" src="../../resources/img/sesion.png" alt="login">Iniciar sesion</a></li>
+                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');"><img class="icon-nav" src="../resources/img/sesion.png" alt="login">Iniciar sesion</a></li>
 
-                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_registro');"><img class="icon-nav" src="../../resources/img/registrarse.png" alt="sign">Registrarse</a></li>
+                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_registro');"><img class="icon-nav" src="../resources/img/registrarse.png" alt="sign">Registrarse</a></li>
 
-                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');"><img class="icon-nav" src="../../resources/img/reserva.png" alt="reserva">Mi reserva</a></li>
+                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');"><img class="icon-nav" src="../resources/img/reserva.png" alt="reserva">Mi reserva</a></li>
 
                     </ul>
                 </div>
