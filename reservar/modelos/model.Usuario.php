@@ -1,5 +1,5 @@
 <?php
-include ("../inc.includes.php");
+include ("model.Persona.php");
 class Usuario extends Persona {
 private $email,$pass;
 public function __construct($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion,$email,$pass){

@@ -1,6 +1,6 @@
 <?php
 class Hotel {
-private $id_hotel,$nombre,$direccion,$telefono,$provincia,$localidad;
+private $id_hotel,$nombre,$provincia,$localidad,$calle,$nro_calle,$telefono,$precio_Persona;
 private $habitacion;
     public function __construct($nombre,$direccion,$telefono,$provincia,$localidad){
     $this->nombre = $nombre;

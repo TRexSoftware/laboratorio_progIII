@@ -1,6 +1,5 @@
 <?php
-include ("../inc.includes.php");
-abstract class Persona{
+abstract class Persona {
 private $nombre,$apellido,$sexo,$fecha_nacimiento,$email,$direccion;
 
 public function __contruct($dni,$nombre,$apellido,$sexo,$fecha_nacimiento,$direccion){
@@ -13,30 +12,29 @@ public function __contruct($dni,$nombre,$apellido,$sexo,$fecha_nacimiento,$direc
 
 }
 
-public function __destruct(){}
-public function get_dni{
+public function get_dni(){
 	return $this->dni;
 }
-public function get_nombre{
+public function get_nombre(){
 	return $this->nombre;
 }
-public function get_apellido{
+public function get_apellido(){
 	return $this->apellido;
 }
-public function get_sexo{
+public function get_sexo(){
 	return $this->sexo;
 }
-public function get_fecha_nacimiento{
+public function get_fecha_nacimiento(){
 	return $this->fecha_nacimiento;
 }
-public function get_direccion{
+public function get_direccion(){
 	return $this->direccion;
 }
 
 abstract protected function buscar();
 abstract protected function insertar();
 abstract protected function modificar();
-abstract protected function eliminar()
+abstract protected function eliminar();
 }
 
 ?>

@@ -50,5 +50,5 @@ public function fechabd($fecha){
 	}
 	return $now;
 }
-
+}
 ?>

@@ -1,14 +1,12 @@
 <?php
 include ("inc.configuration.php");
-include ("modelos/model.Usuario.php");
-include ("modelos/model.Persona.php");
 
-include ("controladores/controller.Registro");
+include ("modelos/model.Usuario.php");
+
+include ("controladores/controller.Registro.php");
+include ("controladores/controller.Usuario.php");
 
 require_once ("../resources/php/class.MySQL.php");
-
-//ingresar todos los controladores y modelos
-//require_once ("xxx.controller.php");
-//require_once ("xxx.model.php");
+require_once ("../resources/php/class.TemplatePower.inc.php");
 
 ?>
