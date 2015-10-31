@@ -4,6 +4,8 @@ include("inc.includes.php");
 
 $datos = new BaseDatos();
 
+
+
 // INSTANCIA CLASES Y METODOS |
 //isset determina si una variable esta definida o es null
 //$_REQUEST tiene el contenido de get y post
@@ -33,20 +35,10 @@ $datos = new BaseDatos();
 		}
 	}
 
-//===========================================================================================================
-// INSTANCIA TEMPLATE |
-//---------------------
-
-	$tpl = new TemplatePower("templates/index.html" );
+    $tpl = new TemplatePower("templates/index.html" );
 	$tpl->prepare();
-
-//===========================================================================================================
-// LEVANTA TEMPLATE	|
-//-------------------
-
-	$tpl->gotoBlock("_ROOT");
-    $tpl->assign("contenido",$html);
-	$webapp=$tpl->getOutputContent();
+    $tpl->gotoBlock("_ROOT");
+    $webapp=$tpl->getOutputContent();
 	echo $webapp;
 
 ?>
