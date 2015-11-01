@@ -11,9 +11,10 @@ class BaseDatos{
     }
 
     function consultar($query){
-	   //extrae datos de la db
-	   $result = mysqli_query($this->conexion, $query);
-	   return $result;
+	    //extrae datos de la db
+        $result = mysqli_query($this->conexion, $query);
+        $found = mysqli_fetch_array($result, MYSQLI_ASSOC);
+	    return array("result" => $result, "found" => $found);
 }
     
 /*
