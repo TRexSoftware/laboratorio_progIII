@@ -1,24 +1,22 @@
 <?php
+
 class BaseDatos{
-private $conexion;
+    private $conexion;
 
-public function __construct(){
-	$servidor = "localhost";
-	$usuario = "root";
-	$clave = "slash";
-	$base = "reservar";
+    function __construct($host, $user, $pass, $db) {
+        $this->conexion = mysqli_connect($host, $user, $pass, $db);
+    }
+    function __destruct() {
+        mysqli_close($this->conexion);
+    }
 
-	$this->conexion = mysql_connect($servidor,$usuario,$clave);
-	mysql_select_db($base,$this->conexion);
-
+    function consultar($query){
+	   //extrae datos de la db
+	   $result = mysqli_query($this->conexion, $query);
+	   return $result;
 }
-public function __destruct(){}
-
-public function consultar($sql){
-	//extrae datos de la bd
-	$result = mysql_query($sql, $this->conexion);
-	return $result;
-}
+    
+/*
 public function ordenarConsulta($datos){
 	//ordena la consulta
 	$arreglo = mysql_fetch_array($datos);
@@ -49,6 +47,6 @@ public function fechabd($fecha){
 		$now = $anio."-".$mes."-".$dia; //formato de mysql
 	}
 	return $now;
-}
+}*/
 }
 ?>

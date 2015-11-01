@@ -109,9 +109,9 @@
                     <span class="sr-only">Toggle navigation</span>
                     <a class="navbar-brand" href="index.php"><img id="logo" src="../resources/img/logo.png"></a>
                 </div>
-                <form class="navbar-form navbar-left" role="search">
+                <form class="navbar-form navbar-left" role="search" method="post" action="index.php?action=R::buscar">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Ingresa el hotel o ciudad...">
+                        <input type="text" name="hotel" class="form-control" placeholder="Ingresa el hotel o ciudad...">
                     </div>
                     <button type="submit" class="btn btn-default">Buscar</button>
                 </form>
