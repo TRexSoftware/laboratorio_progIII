@@ -7,7 +7,7 @@ class BaseDatos{
         $this->conexion = mysqli_connect($host, $user, $pass, $db);
     }
     function __destruct() {
-        mysql_close($this->conexion);
+        mysqli_close($this->conexion);
     }
 
     function consultar($query){
@@ -19,11 +19,11 @@ class BaseDatos{
 
     function liberarBuffer($datos){
         //liberar buffer de memoria
-        mysql_free_result($datos);
+        mysqli_free_result($datos);
     }
-    public function ejecutar($sql){
+    function ejecutar($sql){
 	   //incluir modificar o elminar en la bd
-	   mysql_query($sql,$this->conexion);
+	    mysqli_query($this->conexion,$sql);
     }
 }
     
@@ -59,5 +59,5 @@ public function fechabd($fecha){
 	}
 	return $now;
 }*/
-}
+
 ?>

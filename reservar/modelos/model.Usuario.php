@@ -22,14 +22,24 @@ public function existe(){
     $existe = false;
     $sql = "SELECT * FROM usuario WHERE email='$this->email' AND pass='$this->pass'";
     $result = $db->consultar($sql);
-    if($result){
+    if($result['found']){
         $existe = true;
     }
     else $existe = false;
-
+    $db->liberarBuffer($result['result']);
     return $existe;
 }
-    public function buscar(){
+
+public function insertar(){
+	global $db;
+   // $this->fecha_nacimiento = $db->fechabd($this->fecha_nacimiento);
+	$sql = "INSERT INTO usuario (email,pass,nombre,apellido,sexo,fechanacimiento,direccion,dni)
+				VALUES ('$this->email','$this->pass','$this->nombre','$this->apellido','$this->sexo','$this->fecha_nacimiento','$this->direccion','$this->dni')";
+
+    $db->ejecutar($sql);
+    echo("8");
+}
+ //   public function buscar(){
 
     //necesitamos saber si existe o no existe
 //	$encontro = false;
@@ -51,23 +61,8 @@ public function existe(){
 //	return $encontro;  //retorno porque en el controlador necesito saber si existe o no
 
 
-    }
 
-public function insertar(){
-	global $db;
-   // $this->fecha_nacimiento = $db->fechabd($this->fecha_nacimiento);
-	$sql = "INSERT INTO usuario (email,pass,nombre,apellido,sexo,fechanacimiento,direccion,dni)
-				VALUES ('$this->email',
-                        '$this->pass',
-                        '$this->nombre',
-						'$this->apellido',
-						'$this->sexo',
-						'$this->fecha_nacimiento',
-						'$this->direccion',
-                        '$this->dni')";
-	$db->ejecutar($sql);
 
-}
 /*
 public function modificar(){
   $sql = "update usuario set nombre='$this->nombre',

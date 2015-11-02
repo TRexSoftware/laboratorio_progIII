@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="page-header-custom">
+          <div class="page-header">
+              <h1>Hotel {nombre}</h1>
+          </div>
+           <div>
+              {descripcion}
+          </div>
+          <div class="panel panel-success">
+              <div class="panel-heading">
+                  <h3 class="panel-title">Galeria</h3>
+              </div>
+              <div class="row panel-body">
+
+                <!-- START BLOCK : imagenes -->
+                  <div class="col-sm-6 col-md-4">
+                    <a href="#" class="thumbnail">
+                      <img src="../resources/img/Hoteles/{nombre}/{numero}.jpg">
+                    </a>
+                  </div>
+
+              <!-- END BLOCK : imagenes -->
+                </div>
+        </div>
+         <div class="panel panel-default">
+              <div class="panel-body">
+                  <h4>Provincia</h4>
+                   <div class="panel panel-default">
+                       {prov}
+                  </div>
+                  <h4>Localidad</h4>
+                  <div class="panel panel-default">
+                       {local}
+                  </div>
+                  <h4>Calle</h4>
+                  <div class="panel panel-default">
+                       {calle}
+                  </div>
+                  <h4>Numero de Calle</h4>
+                  <div class="panel panel-default">
+                       {ncalle}
+                  </div>
+                  <h4>Telefono</h4>
+                  <div class="panel panel-default">
+                       {tel}
+                  </div>
+                  <h4>Precio por persona</h4>
+                  <div class="panel panel-default">
+                       {precio}
+                  </div>
+
+              </div>
+        </div>
+          <!-- START BLOCK : iniciarSesion -->
+          <div>
+              Para realizar una reserva, usted debe iniciar sesion
+              <a href="javascript:void(0)" onclick="visibilidad('popup_sesion');">Iniciar sesion</a>
+          </div>
+          <!-- END BLOCK : iniciarSesion -->
+          <!-- START BLOCK : reservar -->
+          <div>
+              <form method="post" action="index.php?action=Reserva::reservar::{idHotel}">
+                <button type="submit" class="btn btn-primary btn-lg">Reservar</button>
+               </form>
+          </div>
+          <!-- END BLOCK : reservar -->
+    </div>
+</div>

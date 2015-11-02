@@ -21,7 +21,10 @@ class Usuario_Controller {
         }
         echo $tp->getOutputContent();
     }
-
+    public function cerrarSesion(){
+         session_destroy();
+         header("Location: index.php");
+    }
      public function registrar(){
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
@@ -32,24 +35,30 @@ class Usuario_Controller {
         $dni = $_POST['dni'];
         $pass = $_POST['password'];
 
-        $tp = new TemplatePower("templates/registro.html");
-        $tp->prepare();
-        $tp->gotoBlock("_ROOT");
-
         $persona = new Usuario($email,$pass);
         $existe = $persona->existe();
 
         if($existe){
+            $tp = new TemplatePower("templates/registro.html");
+            $tp->prepare();
+            $tp->gotoBlock("_ROOT");
             $tp->newblock("no_registro");
             $tp->assign("usuario", $email);
-
+            $webapp=$tp->getOutputContent();
 
         }
         else{
             $persona->setDatosUsuario($nombre,$apellido,$sexo,$fecha_nacimiento,$direccion,$dni);
             $persona->insertar();
-            $tp->newblock("registro");
-            }
+             $_SESSION['user'] = $email;
+            $tp = new TemplatePower("templates/index.html" );
+            $tp->prepare();
+            $tp->gotoBlock("_ROOT");
+            $tp->newBlock("sesion");
+            $tp->assign("usuario", $_SESSION['user']);
+            $webapp=$tp->getOutputContent();
+        }
+         echo $webapp;
     }
 
 }

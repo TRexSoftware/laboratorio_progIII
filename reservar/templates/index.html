@@ -33,6 +33,16 @@
             </div>
         </div>
 
+        <!-- PopUp cerrar Sesion -->
+        <div id="popup_Cerrarsesion" class="popup-position">
+            <div id="popup_contenido_sesion">
+                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_Cerrarsesion');">
+                    <img class="close" src="../resources/img/close.png"></a></p>
+                <a href="index.php?action=Usuario::cerrarSesion"><h3>Cerrar Sesion</h3></a>
+
+            </div>
+        </div>
+
 
        <!-- PopUp REGISTRO -->
       <div id=popup_registro class="popup-position">
@@ -110,7 +120,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     <a class="navbar-brand" href="index.php"><img id="logo" src="../resources/img/logo.png"></a>
                 </div>
-                <form class="navbar-form navbar-left" role="search" method="post" action="index.php?action=R::buscar">
+                <form class="navbar-form navbar-left" role="search" method="post" action="index.php?action=Hotel::buscar">
                     <div class="form-group">
                         <input type="text" name="hotel" class="form-control" placeholder="Ingresa el hotel o ciudad...">
                     </div>
@@ -118,9 +128,12 @@
                 </form>
                 <div class="collapse navbar-collapse navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
-
+                        <!-- START BLOCK : iniciarsesion -->
                         <li><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');"><img class="icon-nav" src="../resources/img/sesion.png" alt="login">Iniciar sesion</a></li>
-
+                        <!-- END BLOCK : iniciarsesion -->
+                        <!-- START BLOCK : sesion -->
+                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_Cerrarsesion');">{usuario}</a></li>
+                        <!-- END BLOCK : sesion -->
                         <li><a href="javascript:void(0)" onclick="visibilidad('popup_registro');"><img class="icon-nav" src="../resources/img/registrarse.png" alt="sign">Registrarse</a></li>
 
                         <li><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');"><img class="icon-nav" src="../resources/img/reserva.png" alt="reserva">Mi reserva</a></li>
