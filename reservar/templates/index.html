@@ -40,7 +40,7 @@
                 <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_registro');">
                         <img class="close" src="../resources/img/close.png"></a></p>
                 <h3>Registrarse</h3>
-                <form action="index.php?action=Usuario::alta" method="post" name="registro_usuario">
+                <form action="index.php?action=Usuario::registrar" method="post" name="registro_usuario">
                     <div>
                         <label>Nombre</label><br>
                         <input type="text" name="nombre" value="" maxlength="15"><br>
@@ -66,13 +66,14 @@
                         <input type="email" name="email" value="" maxlength="15"><br>
                     </div>
                     <div>
-                        <label>Usuario</label><br>
-                        <input id="user" type="text" name="user" value="" maxlength="20"><br>
-                    </div>
-                    <div>
                         <label>Contraseña</label><br>
                         <input id="password" type="password" name="password" value="" maxlength="15"><br>
                     </div>
+                    <div>
+                        <label>Dni</label><br>
+                        <input id="identificacion" type="number" name="dni" value="" maxlength="20"><br>
+                    </div>
+
                     <div>
                         <input type="submit" name="aceptar" value="Aceptar">
                     </div>
@@ -89,11 +90,11 @@
                 <form action="index.php" method="post" name="mi_reserva">
                     <div>
                         <label>Nro solicitud compra</label><br>
-                        <input type="text" name="user" value="" maxlength="15"><br>
+                        <input type="text" name="nro_solicitud" value="" maxlength="15"><br>
                     </div>
                     <div>
                         <label>Email de compra</label><br>
-                        <input type="email" name="user" value="" maxlength="15"><br>
+                        <input type="email" name="email_compra" value="" maxlength="15"><br>
                     </div>
                     <div>
                         <input type="submit" name="aceptar" value="Aceptar">
@@ -128,7 +129,6 @@
                 </div>
             </div>
         </nav>
-
         <!-- START BLOCK : contenido -->
         <div class="container">
             <div class="page-header center-block">
@@ -192,11 +192,14 @@
                 </form>
             </div>
         </div>
-
+        <!-- END BLOCK : contenido -->
         <!-- Footer -->
         <footer>
             <div class="container fixed-bottom">
                 <p><a href="https://github.com/TRexSoftware/laboratorio_progIII/">Laboratorio - Programación III.</a> Cabrera Sebastían - Sacaba Flavio - Acosta Gabriel</p>
+            </div>
+            <div class="container fixed-bottom">
+                <a href="">Iniciar Sesion Administrador</a>
             </div>
         </footer>
 

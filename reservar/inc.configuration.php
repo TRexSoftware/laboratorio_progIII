@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 
 $config["db"]="db_laboratorio";
 $config["dbuser"]="root";
-$config["dbpass"]="";
+$config["dbpass"]="slash";
 $config["dbhost"]="localhost";
 $config["dbEngine"]="MYSQL";
 

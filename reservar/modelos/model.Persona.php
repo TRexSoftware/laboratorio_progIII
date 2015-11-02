@@ -31,10 +31,7 @@ public function get_direccion(){
 	return $this->direccion;
 }
 
-abstract protected function buscar();
-abstract protected function insertar();
-abstract protected function modificar();
-abstract protected function eliminar();
+
 }
 
 ?>

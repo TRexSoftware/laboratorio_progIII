@@ -79,6 +79,7 @@ footer a {
     animation-name: aparecer;
     animation-duration: 1s;
 }
+
 #popup_contenido_mireserva{
     width: 300px; margin: 108px auto; text-align: left;
     background-color: #FFF;
@@ -88,6 +89,7 @@ footer a {
     animation-duration: 1s;
 
 }
+
 .close {
     width: 20px;
     height: 20px;

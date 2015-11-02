@@ -15,6 +15,16 @@ class BaseDatos{
         $result = mysqli_query($this->conexion, $query);
         $found = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	    return array("result" => $result, "found" => $found);
+    }
+
+    function liberarBuffer($datos){
+        //liberar buffer de memoria
+        mysql_free_result($datos);
+    }
+    public function ejecutar($sql){
+	   //incluir modificar o elminar en la bd
+	   mysql_query($sql,$this->conexion);
+    }
 }
     
 /*
