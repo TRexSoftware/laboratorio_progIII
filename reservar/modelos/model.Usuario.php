@@ -26,7 +26,7 @@ public function existe(){
         $existe = true;
     }
     else $existe = false;
-    $db->__destruct();
+
     return $existe;
 }
     public function buscar(){
@@ -66,7 +66,7 @@ public function insertar(){
 						'$this->direccion',
                         '$this->dni')";
 	$db->ejecutar($sql);
-	$db->__destruct();
+
 }
 /*
 public function modificar(){

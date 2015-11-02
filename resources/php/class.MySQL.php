@@ -7,7 +7,7 @@ class BaseDatos{
         $this->conexion = mysqli_connect($host, $user, $pass, $db);
     }
     function __destruct() {
-        mysqli_close($this->conexion);
+        mysql_close($this->conexion);
     }
 
     function consultar($query){
