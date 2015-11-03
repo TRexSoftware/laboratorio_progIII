@@ -26,6 +26,7 @@ private $lista_habitaciones = array();
              foreach($result['result'] as $r)
                 $this->id_hotel = $r['id_hotel'];
         }
+
         return $this->id_hotel;
     }
 

@@ -87,7 +87,6 @@ class Administrador_Controller{
 
         //para mandar el id del hotel por url
         $id_hotel = $hotel->get_Id_Hotel();
-
         $tp->newBlock("habitaciones");
         $tp->assign("id_hotel",$id_hotel);
         echo $tp->getOutputContent();
