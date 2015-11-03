@@ -20,7 +20,7 @@ private $lista_habitaciones = array();
 
     public function get_Id_Hotel(){
         global $db;
-       	$sql = "SELECT * FROM hotel WHERE (nombre ='$this->nombre' AND calle = '$this->calle' AND nro_calle = '$this->nro_calle')";
+       	$sql = "SELECT * FROM hotel WHERE (nom_hotel ='$this->nombre' AND calle = '$this->calle' AND nro_calle = '$this->nro_calle')";
        $result = $db->consultar($sql);
         if($result['found']) {
              foreach($result['result'] as $r)
@@ -87,12 +87,11 @@ private $lista_habitaciones = array();
     public function alta_Hotel(){
 	   global $db;
 
-		$sql = "insert into hotel(nom_hotel, provincia, localidad, calle, nro_calle, telefono, precio_persona,descripcion,cant_imagenes,estado)
-				values ('$this->nombre', $this->provincia, $this->localidad, '$this->calle',
-						'$this->nro_calle', '$this->telefono', '$this->precio_Persona',
-						'$this->descripcion', '$this->cant_imagenes','true')";
+		$sql = "INSERT INTO hotel(nom_hotel, provincia, localidad, calle, nro_calle, telefono, precio_persona,cant_imagenes,descripcion,estado)
+				values ('$this->nombre', '$this->provincia', '$this->localidad', '$this->calle',
+						'$this->nro_calle', '$this->telefono', '$this->precio_Persona', '$this->cant_imagenes',
+						'$this->descripcion','true')";
 		$db->ejecutar($sql);
-
 	}
 
     public function baja_Hotel(){
