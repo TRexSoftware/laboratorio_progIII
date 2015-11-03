@@ -25,7 +25,7 @@ private $lista_camas = array();
     }
 
     public function getCapacicad(){
-        return $this->capacidad};
+        return $this->capacidad;
     }
 	 public function getDisponibilidad(){
         return $this->disponibilidad;
@@ -123,6 +123,8 @@ private $lista_camas = array();
                 }
 		 $db->liberarBuffer($result['result']);
     }
+
+}
 
 
 

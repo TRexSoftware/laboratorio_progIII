@@ -20,7 +20,7 @@ class Cama{
 	 public function getCantidad(){
         return $this->cantidad;
     }
-	public function setIdCama($id_cama)
+	public function setIdCama($id_cama){
          $this->id_cama = $id_cama;
     }
 	public function setTipo($tipo){
@@ -31,7 +31,7 @@ class Cama{
          $this->cantidad = $cantidad;
     }
     public function insertarCama(){//insertar una cama en la tabla Cama
-		global db;
+		global $db;
         $sql = "insert into cama (id_cama,tipo)
                 values ('$this->id_cama','$this->tipo')";
 
@@ -46,9 +46,9 @@ class Cama{
     }
 
 	public function BuscarCama($id_cama){
-		global db;
+		global $db;
 		$sql = "select * from cama where(id_cama ='$id_cama')";
-		$result = db->consultar($sql);
+		$result = $db->consultar($sql);
 
 	}
 }

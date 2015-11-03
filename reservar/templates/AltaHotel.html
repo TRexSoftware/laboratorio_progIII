@@ -1,0 +1,151 @@
+
+   <div class="container">
+    <div class="page-header-custom">
+          <!-- START BLOCK : alta -->
+           <div id="hotel">
+            <form class="form-horizontal form-group" action="index.php?action=Administrador::nuevoHotel" method="post" name="hotel_nuevo">
+                <fieldset>
+
+                    <legend>Insertar Hotel</legend>
+
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">Nombre Hotel</label>
+                      <div class="col-md-5">
+                      <input  name="nom_hotel" type="text" placeholder="Ingrese el nombre del hotel" class="form-control input-md" required="">
+                      </div>
+                    </div>
+
+                   <div class="form-group">
+                      <label class="col-md-4 control-label">Provincia</label>
+                      <div class="col-md-4">
+                        <input name="provincia" type="text" placeholder="Ingresar provincia" class="form-control input-md" required="">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Localidad</label>
+                        <div class="col-md-4">
+                            <input name="localidad" type="text" placeholder="Ingresar localidad" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Calle</label>
+                        <div class="col-md-4">
+                            <input name="calle" type="text" placeholder="Ingresar calle" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Nro de calle</label>
+                        <div class="col-md-4">
+                            <input name="nro_calle" type="number" placeholder="Ingresar nro de calle" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Telefono</label>
+                        <div class="col-md-4">
+                            <input name="telefono" type="number" placeholder="Ingresar telefono" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Precio por Persona</label>
+                        <div class="col-md-4">
+                            <input name="precio_persona" type="text" placeholder="Ingresar precio" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Cantidad de imagenes del hotel</label>
+                        <div class="col-md-4">
+                            <input name="cant_imagenes" type="number" placeholder="Ingresar cantidad" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Descripcion</label>
+                        <div class="col-md-4">
+                            <input name="descripcion" type="text" placeholder="Ingresar descripcion" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-md-4 ">
+                        <a href="index.php?action=Administrador::nuevoHotel"><button class="btn btn-primary" type= "submit">Ingresar</button></a>
+                      </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <!-- END BLOCK : alta -->
+
+
+        <!--START BLOCK : habitaciones -->
+        <div id="habitaciones">
+            <form class="form-horizontal form-group" action="index.php?action=Administrador::nuevaHabitacion::{id_hotel}" method="post" name="habitaciones">
+                <fieldset>
+
+                    <legend>Habitaciones</legend>
+
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">Cantidad Habitaciones</label>
+                      <div class="col-md-5">
+                      <input  name="cant_habitaciones" type="text" placeholder="Ingrese la cantidad de habitaciones" class="form-control input-md" required="">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-md-4 ">
+                        <a href="index.php?action=Administrador::nuevoHotel"><button class="btn btn-primary" type= "submit">Ingresar</button></a>
+                      </div>
+                    </div
+                    >
+                </fieldset>
+        </form>
+       </div>
+        <!-- END BLOCK : habitaciones -->
+
+        <!-- START BLOCK : tabla -->
+            <form action="index.php?action=Administrador::nuevaCama" method="post" name="habitacion">
+               <legend>Habitaciones</legend>
+                <!-- START BLOCK : listahabitaciones -->
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                             <form class="form-vertical form-group" >
+                                <label class="col-md-4 control-label">Habitacion {numero}</label>
+                                  <div class="col-md-5">
+                                  <label class="col-md-4 control-label">Capacidad</label>
+                                  <input  name="capacidad" type="text" class="form-control input-md" required="">
+                                </div>
+
+                                <div class="col-md-5">
+                                  <label class="col-md-4 control-label">Disponibilidad</label>
+                                  <input  name="disponibilidad" type="text" class="form-control input-md" required="">
+                                </div>
+
+                                <div class="col-md-5">
+                                  <label class="col-md-4 control-label">Piso</label>
+                                  <input  name="piso" type="text" class="form-control input-md" required="">
+                                </div>
+
+                                <div class="col-md-5">
+                                  <label class="col-md-4 control-label">ubicacion</label>
+                                  <input  name="ubicacion" type="text" class="form-control input-md" required="">
+                                </div>
+                            </form>
+                    </div>
+                </div><br><br>
+                <!-- END BLOCK : listahabitaciones -->
+                    <div class="form-group">
+                      <div class="col-md-4 ">
+                        <button id="singlebutton" name="aceptar" class="btn btn-primary" type= "submit">Guardar</button>
+                      </div>
+                    </div>
+                </form>
+            <!-- END BLOCK : tabla -->
+
+    </div>
+</div>

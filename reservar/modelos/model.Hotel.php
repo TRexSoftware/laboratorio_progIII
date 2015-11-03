@@ -11,19 +11,24 @@ private $lista_habitaciones = array();
     $this->telefono = $telefono;
     $this->provincia = $provincia;
     $this->localidad = $localidad;
-	$this->precio_Persona = $precio_Persona
+	$this->precio_Persona = $precio_Persona;
 	$this->descripcion = $descripcion;
 	$this->cant_imagenes = $cant_imagenes;
-	$this->datos = $GLOBALS['datos'];
     }
 
     public function __destruct(){}
 
-    public function get_Id_hotel(){
+    public function get_Id_Hotel(){
         global $db;
        	$sql = "SELECT * FROM hotel WHERE (nombre ='$this->nombre' AND calle = '$this->calle' AND nro_calle = '$this->nro_calle')";
-       return $db->consultar($sql);
+       $result = $db->consultar($sql);
+        if($result['found']) {
+             foreach($result['result'] as $r)
+                $this->id_hotel = $r['id_hotel'];
+        }
+        return $this->id_hotel;
     }
+
 	public function get_Nombre(){
         return $this->nombre;
     }
@@ -83,7 +88,7 @@ private $lista_habitaciones = array();
 	   global $db;
 
 		$sql = "insert into hotel(nom_hotel, provincia, localidad, calle, nro_calle, telefono, precio_persona,descripcion,cant_imagenes,estado)
-				values ('$this->id_hotel', '$this->nombre', $this->provincia, $this->localidad, '$this->calle',
+				values ('$this->nombre', $this->provincia, $this->localidad, '$this->calle',
 						'$this->nro_calle', '$this->telefono', '$this->precio_Persona',
 						'$this->descripcion', '$this->cant_imagenes','true')";
 		$db->ejecutar($sql);
@@ -92,6 +97,7 @@ private $lista_habitaciones = array();
 
     public function baja_Hotel(){
         global $db;
+        $this->get_Id_Hotel();
 		$sql = "update hotel  set estado= 'false'
 									where(id_hotel=$this->id_hotel)";
 		$db->ejecutar($sql);
@@ -114,7 +120,7 @@ private $lista_habitaciones = array();
     }
 	public function AgregarHabitacion($id_hotel,$id_habitacion){
         global $db;
-		$sql = "inser into hotel_habitacion (id_habitacion,id_hotel)
+		$sql = "insert into hotel_habitacion (id_hotel)
 				values('$id_hotel','$id_habitacion')";
         $db->ejecutar($sql);
 
