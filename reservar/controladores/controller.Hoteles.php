@@ -76,5 +76,6 @@ class Hotel_Controller {
 
         echo $tp->getOutputContent();
     }
+
 }
 ?>

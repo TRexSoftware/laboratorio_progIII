@@ -53,14 +53,23 @@ $tpl->gotoBlock("_ROOT");
 
 if( !isset($_SESSION['user'])){
     $tpl->newBlock("iniciarsesion");
-    $webapp=$tpl->getOutputContent();
+    $webapp = $tpl->getOutputContent();
 
 }
 else{
     $tpl->newBlock("sesion");
     $tpl->assign("usuario", $_SESSION['user']);
-    $webapp=$tpl->getOutputContent();
+    $webapp = $tpl->getOutputContent();
+}
 
+if(isset($_SESSION['useradmin'])){
+    $tpl->newBlock("administrador");
+    $tpl->assign("administrador", $_SESSION['useradmin']);
+    $webapp = $tpl->getOutputContent();
+}
+else{
+    $tpl->newBlock("noadministrador");
+    $webapp = $tpl->getOutputContent();
 }
     echo $webapp;
 ?>

@@ -209,11 +209,16 @@
         <!-- Footer -->
         <footer>
             <div class="container fixed-bottom">
-                <p><a href="https://github.com/TRexSoftware/laboratorio_progIII/">Laboratorio - Programación III.</a> Cabrera Sebastían - Sacaba Flavio - Acosta Gabriel</p>
-            </div>
-            <div class="container fixed-bottom">
-                <a href="">Iniciar Sesion Administrador</a>
-            </div>
+                    <a href="https://github.com/TRexSoftware/laboratorio_progIII/">Laboratorio - Programación III.</a> Cabrera Sebastían - Sacaba Flavio - Acosta Gabriel
+
+                <!-- START BLOCK : noadministrador -->
+                   <a class="admin" href="index.php?action=Administrador::sesion">Iniciar Sesion Administrador</a>
+                <!-- END BLOCK : noadministrador -->
+                <!-- START BLOCK : administrador -->
+                    <a class="admin" href="index.php?action=Administrador::sesion">Administrador : {administrador}</a><br>
+                    <a class="admin" href="index.php?action=Administrador::cerraradmin">Cerrar Sesion Administrador</a>
+                <!-- END BLOCK : administrador -->
+                </div>
         </footer>
 
     </body>

@@ -1,7 +1,7 @@
 <?php
 class Reserva_Controller{
 
-    public class reservar($idHotel){
+    public function reservar($idHotel){
         if(isset($_SESSION['user'])){
 
         }

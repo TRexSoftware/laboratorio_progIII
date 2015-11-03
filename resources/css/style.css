@@ -71,7 +71,7 @@ footer a {
 #popup_contenido_sesion h3,#popup_contenido_registro h3, #popup_contenido_mireserva h3{
     color: #2196F3;
 }
-#popup_contenido_registro{
+#popup_contenido_registro, #administrador{
     width: 300px; margin: 108px auto; text-align: left;
     background-color: #FFF;
     padding: 10px;
@@ -111,4 +111,8 @@ footer a {
 .page-header-custom {
     padding-bottom: 20px;
     margin: 20px 100px 50px;
+}
+
+.admin {
+ float: right;
 }

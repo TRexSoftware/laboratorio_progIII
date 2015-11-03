@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="page-header-custom">
+          <!-- START BLOCK : iniciarsesion -->
+           <div id="administrador">
+            <form class="form-horizontal form-group" action="index.php?action=Administrador::administrar" method="post" name="administrador">
+                <fieldset>
+
+                <legend>Administrador</legend>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="user">User</label>
+                  <div class="col-md-5">
+                  <input id="user" name="useradmin" type="text" placeholder="" class="form-control input-md" required="">
+
+                  </div>
+                </div>
+
+               <div class="form-group">
+                  <label class="col-md-4 control-label" for="password">Contraseña</label>
+                  <div class="col-md-4">
+                    <input id="password" name="pass" type="password" placeholder="" class="form-control input-md" required="">
+
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-4 ">
+                    <button id="singlebutton" name="aceptar" class="btn btn-primary" type= "submit">Ingresar</button>
+                  </div>
+                </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <!-- END BLOCK : iniciarsesion -->
+
+           <!-- START BLOCK : no_sesion -->
+            <div class='alert alert-warning' role='alert'>Datos Incorrectos<br></div>
+            <a href="index.php?action=Administrador::sesion">Volver a cargar datos</a>
+        <!-- END BLOCK : no_sesion -->
+
+        <!-- START BLOCK : sesion -->
+
+        <div id="hotel">
+            <form class="form-horizontal form-group" action="index.php?action=Administrador::cargarHotel" method="post" name="hotel_nuevo">
+                <fieldset>
+
+                    <legend>Insertar Hotel</legend>
+
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">Nombre Hotel</label>
+                      <div class="col-md-5">
+                      <input  name="nom_hotel" type="text" placeholder="Ingrese el nombre del hotel" class="form-control input-md" required="">
+                      </div>
+                    </div>
+
+                   <div class="form-group">
+                      <label class="col-md-4 control-label">Provincia</label>
+                      <div class="col-md-4">
+                        <input name="provincia" type="text" placeholder="Ingresar provincia" class="form-control input-md" required="">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Localidad</label>
+                        <div class="col-md-4">
+                            <input name="localidad" type="text" placeholder="Ingresar localidad" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Calle</label>
+                        <div class="col-md-4">
+                            <input name="calle" type="text" placeholder="Ingresar calle" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Nro de calle</label>
+                        <div class="col-md-4">
+                            <input name="nro_calle" type="number" placeholder="Ingresar nro de calle" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Telefono</label>
+                        <div class="col-md-4">
+                            <input name="telefono" type="number" placeholder="Ingresar telefono" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Precio por Persona</label>
+                        <div class="col-md-4">
+                            <input name="precio_persona" type="text" placeholder="Ingresar precio" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Cantidad de imagenes del hotel</label>
+                        <div class="col-md-4">
+                            <input name="cant_imagenes" type="number" placeholder="Ingresar cantidad" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Descripcion</label>
+                        <div class="col-md-4">
+                            <input name="descripcion" type="text" placeholder="Ingresar descripcion" class="form-control input-md" required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-md-4 ">
+                        <a href="index.php?action=Administrador::nuevoHotel"><button class="btn btn-primary" type= "submit">Ingresar</button></a>
+                      </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <!-- END BLOCK : sesion -->
+    </div>
+</div>
+
