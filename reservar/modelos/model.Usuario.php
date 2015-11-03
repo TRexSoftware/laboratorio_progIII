@@ -37,7 +37,7 @@ public function insertar(){
 				VALUES ('$this->email','$this->pass','$this->nombre','$this->apellido','$this->sexo','$this->fecha_nacimiento','$this->direccion','$this->dni')";
 
     $db->ejecutar($sql);
-    echo("8");
+
 }
  //   public function buscar(){
 

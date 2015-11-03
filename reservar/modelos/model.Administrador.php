@@ -10,7 +10,7 @@ private $user, $pass;
     public function existe(){
     global $db;
     $existe = false;
-    $sql = "SELECT * FROM administrador WHERE user='$this->user' AND pass='$this->pass'";
+    $sql = "SELECT * FROM administrador WHERE admin='$this->user' AND pass='$this->pass'";
     $result = $db->consultar($sql);
     if($result['found']){
         $existe = true;
