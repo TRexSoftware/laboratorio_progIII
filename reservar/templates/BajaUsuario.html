@@ -1,0 +1,60 @@
+<!-- START BLOCK : tabla -->
+<div class="container">
+    <div class="page-header-custom">
+        <table class="table">
+            <tr>
+                <th colspan="7" align="center"><b>Usuarios</b></th>
+            </tr>
+            <tr>
+                <th align="center">Email</th>
+                <th align="center">Nombre</th>
+                <th align="center">Apellido</th>
+                <th align="center">Sexo</th>
+                <th align="center">Fecha de Nacimiento</th>
+                <th align="center">Direccion</th>
+                <th align="center">DNI</th>
+            </tr>
+            <!-- START BLOCK : usuarios -->
+            <tr>
+                <td><a href = "index.php?action=Administrador::datosusuario::{email}">{email}</a></td>
+                <td>{nombre}</td>
+                <td>{apellido}</td>
+                <td>{sexo}</td>
+                <td>{fechanacimiento}</td>
+                <td>{direccion}</td>
+                <td>{dni}</td>
+            </tr>
+            <!-- END BLOCK : usuarios -->
+            <!-- START BLOCK : no_usuarios -->
+            <div class='alert alert-warning' role='alert'>No hay usuarios</div>
+            <a href="index.php">Inicio</a><br>
+            <a href="index.php?action=Administrador::sesion">Administrador</a>
+            <!-- END BLOCK : no_usuarios -->
+        </table>
+    </div>
+</div>
+<!-- END BLOCK : tabla -->
+
+<!-- START BLOCK : baja -->
+<div class="container">
+    <div class="page-header-custom">
+        <div class="list-group">
+           <h4 class="list-group-item-heading">{email}</h4>
+            <form method="post" action="index.php?action=Administrador::bajau::{email}">
+                <button type="submit" class="btn btn-primary btn-lg" >Realizar Baja</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END BLOCK : baja -->
+
+
+<!-- START BLOCK : mensaje -->
+<div class="container">
+    <div class="page-header-custom">
+        <div class='alert alert-warning' role='alert'>Se ha eliminado el Usuario</div>
+            <a href="index.php">Inicio</a>
+            <a href="index.php?action=Administrador::sesion">Administrador</a>
+    </div>
+</div>
+<!-- END BLOCK : mensaje -->

@@ -35,7 +35,7 @@ class Hotel_Controller {
          $mhotels = new MHotels();
          $result = $mhotels->buscar_id($idHotel);
 
-        foreach($result['result'] as $r)
+        foreach($result['result'] as $r){
             $nombreHotel = $r['nom_hotel'];
             $prov = $r['provincia'];
             $local = $r['localidad'];
@@ -45,7 +45,7 @@ class Hotel_Controller {
             $precio = $r['precio_persona'];
             $cant_imagenes = $r['cant_imagenes'];
             $descripcion = $r['descripcion'];
-
+        }
         $tp = new TemplatePower("templates/hotel.html");
         $tp->prepare();
         $tp->gotoBlock("_ROOT");

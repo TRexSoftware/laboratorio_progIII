@@ -33,13 +33,14 @@ public function existe(){
 public function insertar(){
 	global $db;
    // $this->fecha_nacimiento = $db->fechabd($this->fecha_nacimiento);
-	$sql = "INSERT INTO usuario (email,pass,nombre,apellido,sexo,fechanacimiento,direccion,dni)
-				VALUES ('$this->email','$this->pass','$this->nombre','$this->apellido','$this->sexo','$this->fecha_nacimiento','$this->direccion','$this->dni')";
+	$sql = "INSERT INTO usuario (email,pass,nombre,apellido,sexo,fechanacimiento,direccion,dni,estado)
+				VALUES ('$this->email','$this->pass','$this->nombre','$this->apellido','$this->sexo','$this->fecha_nacimiento','$this->direccion','$this->dni','1')";
 
     $db->ejecutar($sql);
 
 }
- //   public function buscar(){
+
+public function buscar(){
 
     //necesitamos saber si existe o no existe
 //	$encontro = false;
@@ -60,29 +61,30 @@ public function insertar(){
 //	$datos->cerrarconexion();
 //	return $encontro;  //retorno porque en el controlador necesito saber si existe o no
 
+}
 
 
 
-/*
-public function modificar(){
-  $sql = "update usuario set nombre='$this->nombre',
+public function modificar($email){
+    global $db;
+  $sql = "UPDATE usuario SET nombre='$this->nombre',
 								apellido='$this->apellido',
 								sexo='$this->sexo',
 								fechanacimiento='$this->fecha_nacimiento',
 								direccion='$this->direccion',
                                 pass = '$this->pass'
-								where(email = '$this->email') ";
-	$datos->ejecutar($sql);
-	$datos->cerrarconexion();
+								where(email = '$email') ";
+	$db->ejecutar($sql);
 }
 
-public function eliminar(){
- 	$sql = "delete from usuario where(email='$this->email')";
-    $datos->ejecutar($sql);
-    $datos->cerrarconexion();
+public function eliminar($email){
+ 	global $db;
+    $sql = "delete from usuario where(email='$email')";
+    $db->ejecutar($sql);
+
 }
 
-*/
+
 
 }
 ?>

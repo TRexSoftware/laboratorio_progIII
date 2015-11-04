@@ -92,15 +92,15 @@ private $lista_habitaciones = array();
 		$sql = "INSERT INTO hotel(nom_hotel, provincia, localidad, calle, nro_calle, telefono, precio_persona,cant_imagenes,descripcion,estado)
 				values ('$this->nombre', '$this->provincia', '$this->localidad', '$this->calle',
 						'$this->nro_calle', '$this->telefono', '$this->precio_Persona', '$this->cant_imagenes',
-						'$this->descripcion','true')";
+						'$this->descripcion','1')";
 		$db->ejecutar($sql);
 	}
 
-    public function baja_Hotel(){
+    public function baja_Hotel($id_hotel){
         global $db;
-        $this->get_Id_Hotel();
-		$sql = "update hotel  set estado= 'false'
-									where(id_hotel=$this->id_hotel)";
+
+		$sql = "UPDATE hotel  SET estado='0'
+									where(id_hotel=$id_hotel)";
 		$db->ejecutar($sql);
     }
 
@@ -138,7 +138,7 @@ private $lista_habitaciones = array();
 					$this->lista_habitaciones[] = $habitacion;
 
                 }
-		 $db->liberarBuffer($result['result']);
+
     }
 
 
