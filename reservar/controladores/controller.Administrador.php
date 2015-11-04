@@ -109,11 +109,8 @@ class Administrador_Controller{
 
 
             $habitacion = new Habitacion($capacidad,$disponibilidad,$piso, $ubicacion);
-            $habitacion->insertarHabitacion();
-            $id_habitacion = $habitacion->getId_habitacion();
-            echo $id_habitacion;
-            echo "<br><br>";
-            echo $id_hotel;
+            $id_habitacion = $habitacion->insertarHabitacion();
+
             $hotel = new Hotel();
             $hotel->AgregarHabitacion($id_hotel,$id_habitacion);
 

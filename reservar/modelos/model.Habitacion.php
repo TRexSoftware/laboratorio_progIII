@@ -18,17 +18,6 @@ private $lista_camas = array();
 	public function setLista($lista_camas){
 		$this->listalista_camas = $lista_camas;
 	}
-    public function getId_habitacion(){
-        global $db;
-      	$sql = "SELECT * FROM habitacion WHERE (capacidad ='$this->capacidad' AND disponibilidad = '$this->disponibilidad'
-                AND piso = '$this->piso' AND ubicacion = '$this->ubicacion')";
-        $result = $db->consultar($sql);
-        if($result['found']) {
-             foreach($result['result'] as $r)
-                $this->id_habitacion = $r['id_habitacion'];
-        }
-        return $this->id_habitacion;
-    }
 
     public function getCapacicad(){
         return $this->capacidad;
@@ -60,10 +49,21 @@ private $lista_camas = array();
 
     public function insertarHabitacion(){//insertar una habitacion en la tabla habitacion
 		global $db;
+
         $sql = "insert into habitacion (capacidad,disponibilidad,piso,ubicacion)
                 values ('$this->capacidad','1','$this->piso','$this->ubicacion')";
 
 	   $db->ejecutar($sql);
+
+        $sql1 = "SELECT id_habitacion FROM habitacion WHERE id_habitacion=(SELECT max(id_habitacion) FROM habitacion)";
+        $result = $db->consultar($sql1);
+        if($result['found']) {
+             foreach($result['result'] as $r)
+                $this->id_habitacion = $r['id_habitacion'];
+        }
+
+        return $this->id_habitacion;
+
     }
 
 	public function modificacionHabitacion(){//tabla habitacion

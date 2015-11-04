@@ -25,7 +25,7 @@ class Reserva_Controller{
         $tp->newBlock("mensajereserva");
         $tp->assign("cod_reserva",$cod_reserva);
 
-
+        echo $tp->getOutputContent();
     }
 
     public function consultarReserva($cod_reserva){

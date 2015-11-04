@@ -24,27 +24,32 @@ class Reserva{
 		global $db;
 
         $sql1 = "SELECT id_habitacion FROM hotel_habitacion WHERE id_hotel='$id_hotel' and capacidad='$capacidad'";
-        $result1 = $db->consultar($sql1);
-        foreach($result1['result'] as $r)
+        $result = $db->consultar($sql1);
+        foreach($result['result'] as $r){
             $id_habitacion = $r['id_habitacion'];
+        }
 
-        echo $id_habitacion;
 
-        $sql = "insert into reserva (id_hotel,id_habitacion,email,fec_llegada,fec_salida,fec_reserva)
-                values ('$id_hotel','$id_habitacion','$email','$fec_llegada','$fec_salida','$fec_reserva')";
+        $this->reservar($id_hotel,$id_habitacion,$email,$fec_llegada,$fec_salida,$fec_reserva);
 
-	   $db->ejecutar($sql);
 
         $sql3 = "SELECT cod_reserva FROM reserva WHERE id_habitacion='$id_habitacion' and id_hotel='$id_hotel'";
         $result = $db->consultar($sql3);
 
         foreach($result['result'] as $r)
             $cod_reserva = $r['cod_reserva'];
-        echo $cod_reserva;
+
         return $cod_reserva;
 
     }
+    public function reservar($id_hotel,$id_habitacion,$email,$fec_llegada,$fec_salida,$fec_reserva){
+        global $db;
+        $sql = "INSERT INTO reserva (id_hotel,id_habitacion,email,fec_llegada,fec_salida,fec_reserva)
+                values ('$id_hotel','$id_habitacion','$email','$fec_llegada','$fec_salida','$fec_reserva')";
 
+        $db->ejecutar($sql);
+
+    }
     public function CancelarReserva($cod_reserva){
         global $db;
         $sql = "delete from reserva where(cod_reserva='$cod_reserva')";

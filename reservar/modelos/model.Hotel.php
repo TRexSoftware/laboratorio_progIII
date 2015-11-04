@@ -122,22 +122,22 @@ private $lista_habitaciones = array();
 	public function AgregarHabitacion($id_hotel,$id_habitacion){
         global $db;
 
-        $sql1 = "select capacidad from habitacion where id_habitacion='$id_habitacion'";
-        $result = $db->consultar($sql1);
+        $sql = "select capacidad from habitacion where id_habitacion='$id_habitacion'";
+        $result = $db->consultar($sql);
         foreach($result['result'] as $r){
             $capacidad = $r['capacidad'];
         }
 
+        echo $capacidad;
 
-		$sql2 = "insert into hotel_habitacion (id_habitacion,id_hotel,capacidad)
-				values('$id_habitacion','$id_hotel','$capacidad')";
+		$sql2 = "insert into hotel_habitacion (id_habitacion,id_hotel,capacidad) values('$id_habitacion','$id_hotel','$capacidad')";
         $db->ejecutar($sql2);
 
     }
 
 	public function BuscarHabitaciones($id_hotel){
         global $db;
-		$sql = "select *from hotel_habitacion where(id_hotel ='$this->id_hotel')";
+		$sql = "select * from hotel_habitacion where(id_hotel ='$this->id_hotel')";
         $result = $db->consultar($sql);
 
                 foreach($result['result'] as $r) {
