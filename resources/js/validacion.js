@@ -1,9 +1,6 @@
- 
-//window.onload = alert('PAGINA CARGADA COMPLETAMENTE'); 
-
 //VALIDA CAMPO OBLIGATORIO
 function validaVacio(valor){
-	if (valor==null || valor.length==0 || /^\s+$/.test(valor)){
+	if (valor===null || valor.length===0 || /^\s+$/.test(valor)){
 		alert("ERROR: Debe ingresar un valor obligatorio");
 		return false;
 	}
@@ -17,70 +14,62 @@ function foco(idElemento){
 //CONTROLA SI EL VALOR ES NUMERICO
 function validaNumerico(valor){
 	if(isNaN(valor)){
-		alert("ERROR: Debe ingresar un valor numérico");
+		alert("ERROR: Debe ingresar un valor numÃ©rico");
 		return false;
 	}
 }
 
-//VALIDAR CAMPOS DE REGISTRAR
-function validar_registrar() {
-
-    //comprueba el campo NOMBRE Y APELLIDO
-    valor = document.getElementById("nombreApellido").value;
-    resultado = validaVacio(valor);
-    if (resultado == false) {
-        foco("nombreApellido");
+// VALIDAR SESION
+function validarSesion() {
+    if(validaVacio(document.getElementById("email").value) === false) {
+        foco("email");
         return false;
     } else {
-        //comprueba el campo USUARIO
-        valor = document.getElementById("usuario").value;
-        resultado = validaVacio(valor);
-        if (resultado == false) {
-            foco("usuario");
+        if(validaVacio(document.getElementById("pass").value) === false) {
+            foco("pass");
+            return false;
+        } else
+            return true;
+    }
+}
+//VALIDAR CAMPOS DE REGISTRAR
+function validarRegistro() {
+    //comprueba el campo NOMBRE
+    valor = document.getElementById("name").value;
+    if (validaVacio(valor)) {
+        foco("name");
+        return false;
+    } else {
+        // Comprueba el campo APELLIDO
+        resultado = validaVacio(document.getElementById("lastn").value);
+        if(resultado === false) {
+            foco("lastn");
             return false;
         } else {
-            //comprueba el campo CONTRASEÑA
-            valor = document.getElementById("contrasenia").value;
-            resultado = validaVacio(valor);
-            if (resultado == false) {
-                foco("contrasenia");
+            // Comprueba el campo SEXO
+            if(validaVacio(document.getElementById("sexo").value) === false) {
+                foco("sexo");
                 return false;
             } else {
-                //comprueba el campo REPETIR CONTRASEÑA
-                valor = document.getElementById("recontrasenia").value;
-                resultado = validaVacio(valor);
-                if (resultado == false) {
-                    foco("recontrasenia");
+                if(validaVacio(document.getElementById("fecnac").value) === false) {
+                    foco("fecnac");
                     return false;
                 } else {
-                    //comprueba el campo EMAIL
-                    valor = document.getElementById("email").value;
-                    resultado = validaVacio(valor);
-                    if (resultado == false) {
-                        foco("email");
+                    if(validaVacio(document.getElementById("direccion").value) === false) {
+                        foco("direccion");
                         return false;
                     } else {
-                        //comprueba el campo TELEFONO
-                        valor = document.getElementById("telefono").value;
-                        resultado = validaVacio(valor);
-                        if (resultado == false) {
-                            foco("telefono");
+                        if(validaVacio(document.getElementById("email").value) === false) {
+                            foco("email");
                             return false;
                         } else {
-                            resultado = validaNumerico(valor);
-                            if (resultado == false) {
-                                foco("telefono");
+                            if(validaVacio(document.getElementById("pass").value) === false) {
+                                foco("pass");
                                 return false;
                             } else {
-                                //CARGA CONTRASEÑA Y REPETIR CONTRASEÑA Y LAS VALIDA
-                                valorcont = document.getElementById("contrasenia").value;
-                                valorrecont = document.getElementById("recontrasenia").value;
-                                result = validar_cont(valorcont,valorrecont);
-                                if(result == false){
-                                    foco("contrasenia");
+                                if(validaVacio(document.getElementById("dni").value) === false) {
+                                    foco("dni");
                                     return false;
-                                }else{
-                                    return true;
                                 }
                             }
                         }
@@ -88,104 +77,6 @@ function validar_registrar() {
                 }
             }
         }
-    }
-}
-
-
-//VALIDA CAMPOS DE INICIAR SESION
-function validar_sesion() {
-
-    //comprueba el campo USUARIO
-    valor = document.getElementById("usuario").value;
-    resultado = validaVacio(valor);
-    if (resultado == false) {
-        foco("usuario");
-        return false;
-    } else {
-        //comprueba el campo CONTRASEÑA
-        valor = document.getElementById("contrasenia").value;
-        resultado = validaVacio(valor);
-        if (resultado == false) {
-            foco("contrasenia");
-            return false;
-        } else {
-            return true;
-        }
-    }
-}
-
-//COMPRUEBA QUE CONTRASEÑA Y REPETIR CONTRASEÑA SEAN IGUALES
-function validar_cont(valorcont,valorrecont) {
-    
-    if (valorcont != valorrecont) {
-        alert("ERROR: Contraseña y Repetir Contraseña son diferentes");
-        return false;
-    }
-}
-
-
-//VALIDA CAMPOS ALTA DE PROPIEDAD
-function validar_alta() {
-
-    valor = document.getElementById("nombre").value;
-    resultado = validaVacio(valor);
-    if (resultado == false) {
-        foco("nombre");
-        return false;
-    } else {
-        valor = document.getElementById("destacado").value;
-        resultado = validaVacio(valor);
-        if (resultado == false) {
-            foco("destacado");
-            return false;
-        } else {
-            valor = document.getElementById("observaciones").value;
-            resultado = validaVacio(valor);
-            if (resultado == false) {
-                foco("observaciones");
-                return false;
-            } else {
-                valor = document.getElementById("capacidad").value;
-                resultado = validaVacio(valor);
-                if (resultado == false) {
-                    foco("capacidad");
-                    return false;
-                } else {
-                    resultado = validaNumerico(valor);
-                    if (resultado == false) {
-                        foco("capacidad");
-                        return false;
-                    } else {
-                        valor = document.getElementById("disponibilidad").value;
-                        resultado = validaVacio(valor);
-                        if (resultado == false) {
-                            foco("disponibilidad");
-                            return false;
-                        } else {
-                            valor = document.getElementById("direccion").value;
-                            resultado = validaVacio(valor);
-                            if (resultado == false) {
-                                foco("direccion");
-                                return false;
-                            } else {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-//FUNCION DE OLVIDE MI CONTRASEÑA
-function olvide_cont() {
-
-    correo = window.prompt('Ingrese su correo electrónico', '');
-    if (correo == null || correo.length==0 || /^\s+$/.test(correo)) {
-        alert("Ingrese por favor su correo electrónico para enviarle un mail y poder restituir su contraseña");
-    } else {
-        alert("Se ha enviado un correo a " + correo);
     }
 }
 
@@ -205,7 +96,7 @@ function existeFecha(fecha){
 //COMPRUEBA EL FORMATO DE LA FECHA
 function validaFecha(campo) {
 	var RegExPattern = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
-	if ((campo.match(RegExPattern)) && (campo!='')) {
+	if ((campo.match(RegExPattern)) && (campo!=='')) {
 		if(existeFecha(campo)){
 			return true;
 		}else{

@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <script src="../resources/js/script.js"></script>
+        <script language="JavaScript" src="../resources/js/validacion.js"></script>    
         <link rel="stylesheet" href="../resources/css/bootstrap.css">
         <link rel="stylesheet" href="../resources/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -17,14 +18,14 @@
                 <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');">
                     <img class="close" src="../resources/img/close.png"></a></p>
                 <h3>Inicio Sesion</h3>
-                <form action="index.php?action=Usuario::sesion" method="post" name="inicio_sesion">
+                <form action="index.php?action=Usuario::sesion" method="post" name="inicio_sesion" onsubmit="return validarSesion()">
                     <div>
                         <label>Email</label><br>
-                        <input type="text" name="email" value="" maxlength="50"><br>
+                        <input type="text" name="email" value="" maxlength="50" id="email"><br>
                     </div>
                     <div>
                         <label>Contraseña</label><br>
-                        <input type="password" name="password" value="" maxlength="15"><br>
+                        <input type="password" name="password" value="" maxlength="15" id="pass"><br>
                     </div>
                     <div>
                         <input type="submit" name="aceptar" value="Aceptar">
@@ -50,38 +51,38 @@
                 <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_registro');">
                         <img class="close" src="../resources/img/close.png"></a></p>
                 <h3>Registrarse</h3>
-                <form action="index.php?action=Usuario::registrar" method="post" name="registro_usuario">
+                <form action="index.php?action=Usuario::registrar" method="post" name="registro_usuario" onsubmit="return validarRegistro()">
                     <div>
                         <label>Nombre</label><br>
-                        <input type="text" name="nombre" value="" maxlength="15"><br>
+                        <input type="text" name="nombre" value="" maxlength="15" id="name"><br>
                     </div>
                     <div>
                         <label>Apellido</label><br>
-                        <input type="text" name="apellido" value="" maxlength="15"><br>
+                        <input type="text" name="apellido" value="" maxlength="15" id="lastn"><br>
                     </div>
                     <div>
                         <label>Sexo</label><br>   <!-- poner radio button -->
-                        <input type="text" name="sexo" value="" maxlength="1"><br>
+                        <input type="text" name="sexo" value="" maxlength="1" id="sexo"><br>
                     </div>
                     <div>
                         <label>Fecha de Nacimiento</label><br>
-                        <input type="date" name="fecha_nacimiento" value=""><br>
+                        <input type="date" name="fecha_nacimiento" value="" id="fecnac"><br>
                     </div>
                     <div>
                         <label>Direccion</label><br>
-                        <input type="text" name="direccion" value="" maxlength="30"><br>
+                        <input type="text" name="direccion" value="" maxlength="30" id="direccion"><br>
                     </div>
                     <div>
                         <label>Correo Electronico</label><br>
-                        <input type="email" name="email" value="" maxlength="50"><br>
+                        <input type="email" name="email" value="" maxlength="50" id="email"><br>
                     </div>
                     <div>
                         <label>Contraseña</label><br>
-                        <input type="password" name="password" value="" maxlength="15"><br>
+                        <input type="password" name="password" value="" maxlength="15" id="pass"><br>
                     </div>
                     <div>
                         <label>Dni</label><br>
-                        <input type="number" name="dni" value="" maxlength="20"><br>
+                        <input type="number" name="dni" value="" maxlength="20" id="dni"><br>
                     </div>
 
                     <div>
