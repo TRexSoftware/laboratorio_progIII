@@ -23,7 +23,9 @@ else{
         list($classParam,$method) = $array;
 
     if($tam == 3)
-        list($classParam,$method,$param) = $array;
+        list($classParam,$method,$param1) = $array;
+    if($tam == 4)
+        list($classParam,$method,$param1,$param2) = $array;
 
 
     if ($method=="")
@@ -34,9 +36,10 @@ else{
             $claseTemp=new $classToInstaciate;
             if($tam == 2)
                 $html=call_user_func_array(array($claseTemp, $method),array());
-            else
-                $html=call_user_func_array(array($claseTemp, $method),array($param));
-
+            if($tam == 3)
+                $html=call_user_func_array(array($claseTemp, $method),array($param1));
+            if($tam == 4)
+                $html=call_user_func_array(array($claseTemp, $method),array($param1,$param2));
         }
         else{
             echo "ERROR";

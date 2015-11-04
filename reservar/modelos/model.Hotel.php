@@ -4,7 +4,8 @@ class Hotel {
 private $id_hotel,$nombre,$provincia,$localidad,$calle,$nro_calle,$telefono,$precio_Persona,$cant_imagenes,$descripcion;
 private $datos;
 private $lista_habitaciones = array();
-    public function __construct($nombre,$calle,$nro_calle,$telefono,$provincia,$localidad,$precio_Persona,$cant_imagenes,$descripcion){
+    public function __construct(){}
+    public function setDatosHotel($nombre,$provincia,$localidad,$calle,$nro_calle,$telefono,$precio_Persona,$cant_imagenes,$descripcion){
     $this->nombre = $nombre;
     $this->calle = $calle;
 	$this->nro_calle = $nro_calle;
@@ -120,15 +121,15 @@ private $lista_habitaciones = array();
     }
 	public function AgregarHabitacion($id_hotel,$id_habitacion){
         global $db;
-		$sql = "insert into hotel_habitacion (id_hotel)
-				values('$id_hotel','$id_habitacion')";
+		$sql = "insert into hotel_habitacion (id_habitacion,id_hotel)
+				values('$id_habitacion','$id_hotel')";
         $db->ejecutar($sql);
 
     }
 
 	public function BuscarHabitaciones($id_hotel){
         global $db;
-		$sql = "select *from hotel_habitacion where(id_hotel ='$id_hotel')";
+		$sql = "select *from hotel_habitacion where(id_hotel ='$this->id_hotel')";
         $result = $db->consultar($sql);
 
                 foreach($result['result'] as $r) {
@@ -146,7 +147,7 @@ private $lista_habitaciones = array();
 
 	public function BuscarHotel($id_hotel){ // este metodo tendrias que convocar para levantar un hotel por completo
         global $db;
-		$sql = "select *from hotel where(id_hotel ='$id_hotel')";
+		$sql = "select *from hotel where(id_hotel ='$this->id_hotel')";
         $result = $db->consultar($sql);
 
                 foreach($result['result'] as $r) {

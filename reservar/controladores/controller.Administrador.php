@@ -75,19 +75,18 @@ class Administrador_Controller{
         $precio_persona =  $_POST['precio_persona'];
         $cant_imagenes = $_POST['cant_imagenes'];
         $descripcion = $_POST['descripcion'];
-        echo $nom_hotel;
-        $tp = new TemplatePower("templates/AltaHotel.html");
+       $tp = new TemplatePower("templates/AltaHotel.html");
         $tp->prepare();
         $tp->gotoBlock("_ROOT");
 
-
-        $hotel = new Hotel($nom_hotel,$provincia,$localidad,$calle,$nro_calle,$telefono,$precio_persona,$cant_imagenes,$descripcion);
+        $hotel = new Hotel();
+        $hotel->setDatosHotel($nom_hotel,$provincia,$localidad,$calle,$nro_calle,$telefono,$precio_persona,$cant_imagenes,$descripcion);
 
         $hotel->alta_Hotel();
 
         //para mandar el id del hotel por url
         $id_hotel = $hotel->get_Id_Hotel();
-        $tp->newBlock("habitaciones");
+        $tp->newBlock("canthabitaciones");
         $tp->assign("id_hotel",$id_hotel);
         echo $tp->getOutputContent();
 
@@ -100,14 +99,47 @@ class Administrador_Controller{
         $tp = new TemplatePower("templates/AltaHotel.html");
         $tp->prepare();
         $tp->gotoBlock("_ROOT");
-        $tp->newBlock("tabla");
-        for ($i=0; $i<$cantidad; $i++)
+
+        $tp->newBlock("habitacion");
+        $tp->assign("numero", "1");
+        $tp->assign("id_hotel",$id_hotel);
+        $tp->assign("max",$cantidad);
+
+        echo $tp->getOutputContent();
+    }
+
+
+    public function habitacion($id_hotel,$max){
+        $tp = new TemplatePower("templates/AltaHotel.html");
+        $tp->prepare();
+        $tp->gotoBlock("_ROOT");
+
+        if($max == 1 )
         {
-            $tp->newBlock("listahabitaciones");
-            $tp->assign("numero",$i);
-
+            $tp->newBlock("hotelcreado");
         }
+        else{
+            $capacidad = $_POST['capacidad'];
+            $disponibilidad = $_POST['disponibilidad'];
+            $piso =  $_POST['piso'];
+            $ubicacion = $_POST['ubicacion'];
 
+
+            $habitacion = new Habitacion($capacidad,$disponibilidad,$piso, $ubicacion);
+            $habitacion->insertarHabitacion();
+            $id_habitacion = $habitacion->getId_habitacion();
+            echo $id_habitacion;
+            echo "<br><br>";
+            echo $id_hotel;
+            $hotel = new Hotel();
+            $hotel->AgregarHabitacion($id_hotel,$id_habitacion);
+
+            $max = (((int)$max)-1);
+
+            $tp->newBlock("habitacion");
+            $tp->assign("id_hotel",$id_hotel);
+            $tp->assign("max",$max);
+        }
         echo $tp->getOutputContent();
     }
 

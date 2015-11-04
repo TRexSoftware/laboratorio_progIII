@@ -2,10 +2,9 @@
 class Cama{
  private $id_cama, $tipo,$cantidad, $datos;
 
-    public function __construct($id_cama,$tipo,$cantidad){
+    public function __construct($id_cama,$tipo){
         $this->id_cama = $id_cama;
         $this->tipo = $tipo;
-		$this->cantidad = $cantidad;
 
 
 
@@ -17,9 +16,6 @@ class Cama{
     public function getTipo(){
         return $this->tipo;
     }
-	 public function getCantidad(){
-        return $this->cantidad;
-    }
 	public function setIdCama($id_cama){
          $this->id_cama = $id_cama;
     }
@@ -27,9 +23,7 @@ class Cama{
          $this->tipo = $tipo;
     }
 
-	 public function setCantidad($cantidad){
-         $this->cantidad = $cantidad;
-    }
+
     public function insertarCama(){//insertar una cama en la tabla Cama
 		global $db;
         $sql = "insert into cama (id_cama,tipo)
@@ -39,9 +33,9 @@ class Cama{
 
     }
     public function eliminarCama($id_cama){
+        global $db;
         $sql = "delete from cama where(id_cama='$id_cama')";
-        $datos->ejecutar($sql);
-        $datos->cerrarconexion();
+        $db->ejecutar($sql);
 
     }
 

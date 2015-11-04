@@ -4,8 +4,7 @@ class Habitacion{
  private $id_habitacion, $capacidad,$disponibilidad,$piso, $ubicacion,$datos;
 private $lista_camas = array();
 
-    public function __construct($id_habitacion, $capacidad,$disponibilidad,$piso, $ubicacion){
-        $this->id_habitacion = $id_habitacion;
+    public function __construct($capacidad,$disponibilidad,$piso, $ubicacion){
         $this->capacidad = $capacidad;
 		$this->disponibilidad = $disponibilidad;
         $this->piso = $piso;
@@ -19,8 +18,15 @@ private $lista_camas = array();
 	public function setLista($lista_camas){
 		$this->listalista_camas = $lista_camas;
 	}
-
     public function getId_habitacion(){
+        global $db;
+      	$sql = "SELECT * FROM habitacion WHERE (capacidad ='$this->capacidad' AND disponibilidad = '$this->disponibilidad'
+                AND piso = '$this->piso' AND ubicacion = '$this->ubicacion')";
+        $result = $db->consultar($sql);
+        if($result['found']) {
+             foreach($result['result'] as $r)
+                $this->id_habitacion = $r['id_habitacion'];
+        }
         return $this->id_habitacion;
     }
 
@@ -54,8 +60,8 @@ private $lista_camas = array();
 
     public function insertarHabitacion(){//insertar una habitacion en la tabla habitacion
 		global $db;
-        $sql = "insert into habitacion (id_habitacion,capacidad,disponibilidad,piso,ubicacion)
-                values ('$this->id_habitacion','$this->capacidad','$this->disponibilidad','$this->piso','$this->ubicacion')";
+        $sql = "insert into habitacion (capacidad,disponibilidad,piso,ubicacion)
+                values ('$this->capacidad','$this->disponibilidad','$this->piso','$this->ubicacion')";
 
 	   $db->ejecutar($sql);
     }

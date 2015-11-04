@@ -83,7 +83,7 @@
         <!-- END BLOCK : alta -->
 
 
-        <!--START BLOCK : habitaciones -->
+        <!--START BLOCK : canthabitaciones -->
         <div id="habitaciones">
             <form class="form-horizontal form-group" action="index.php?action=Administrador::nuevaHabitacion::{id_hotel}" method="post" name="habitaciones">
                 <fieldset>
@@ -93,7 +93,7 @@
                     <div class="form-group">
                       <label class="col-md-4 control-label">Cantidad Habitaciones</label>
                       <div class="col-md-5">
-                      <input  name="cant_habitaciones" type="text" placeholder="Ingrese la cantidad de habitaciones" class="form-control input-md" required="">
+                      <input  name="cant_habitaciones" type="number" placeholder="Ingrese la cantidad de habitaciones" class="form-control input-md" required="">
                       </div>
                     </div>
 
@@ -106,21 +106,57 @@
                 </fieldset>
         </form>
        </div>
-        <!-- END BLOCK : habitaciones -->
+        <!-- END BLOCK : canthabitaciones -->
 
-        <!-- START BLOCK : tabla -->
-            <form action="index.php?action=Administrador::nuevaCama" method="post" name="habitacion">
-               <legend>Habitaciones</legend>
-                <!-- START BLOCK : listahabitaciones -->
-
-                <!-- END BLOCK : listahabitaciones -->
-                <div class="form-group">
-                    <div class="col-md-4 ">
-                        <button id="singlebutton" name="aceptar" class="btn btn-primary" type= "submit">Guardar</button>
+        <!-- START BLOCK : habitacion -->
+                <legend>Habitaciones</legend>
+                <form action="index.php?action=Administrador::habitacion::{id_hotel}::{max}" method="post" name="habitacion" class="form-horizontal">
+                    <legend>Habitacion {numero}</legend>
+                    <div class="form-group">
+                        <label class="control-label col-xs-2">Capacidad</label>
+                        <div class="col-xs-10">
+                             <input name="capacidad" type="number" class="form-control">
+                        </div>
                     </div>
-                </div>
-            </form>
-            <!-- END BLOCK : tabla -->
 
+                    <div class="form-group">
+                        <label class="control-label col-xs-2">Disponibilidad</label>
+                        <div class="col-xs-10">
+                             <select class="form-control" name="disponibilidad">
+                                <option value="Disponible">Disponible</option>
+                                <option value="No disponible">No disponible</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-2">Piso</label>
+                        <div class="col-xs-10">
+                             <input name="piso" type="number" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-2">Ubicacion</label>
+                        <div class="col-xs-10">
+                             <input name="ubicacion" type="number" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-4 ">
+                            <button id="singlebutton" name="aceptar" class="btn btn-primary" type= "submit">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+                <br>
+        <!-- END BLOCK : habitacion -->
+
+
+        <!-- START BLOCK : hotelcreado -->
+            <div class='alert alert-warning' role='alert'>El hotel ha sido creado<br></div>
+                <a href="index.php">Inicio</a><br><br>
+                <a href="index.php?action=Administrador::sesion">Administrador</a>
+        <!-- END BLOCK : hotelcreado -->
     </div>
 </div>
