@@ -121,9 +121,17 @@ private $lista_habitaciones = array();
     }
 	public function AgregarHabitacion($id_hotel,$id_habitacion){
         global $db;
-		$sql = "insert into hotel_habitacion (id_habitacion,id_hotel)
-				values('$id_habitacion','$id_hotel')";
-        $db->ejecutar($sql);
+
+        $sql1 = "select capacidad from habitacion where id_habitacion='$id_habitacion'";
+        $result = $db->consultar($sql1);
+        foreach($result['result'] as $r){
+            $capacidad = $r['capacidad'];
+        }
+
+
+		$sql2 = "insert into hotel_habitacion (id_habitacion,id_hotel,capacidad)
+				values('$id_habitacion','$id_hotel','$capacidad')";
+        $db->ejecutar($sql2);
 
     }
 

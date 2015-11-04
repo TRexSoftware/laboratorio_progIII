@@ -85,7 +85,6 @@ class Administrador_Controller{
         $tp->gotoBlock("_ROOT");
 
         $tp->newBlock("habitacion");
-        $tp->assign("numero", "1");
         $tp->assign("id_hotel",$id_hotel);
         $tp->assign("max",$cantidad);
 

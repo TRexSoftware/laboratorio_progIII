@@ -26,7 +26,7 @@ class Hotel_Controller {
                 }
             } else {
                 $tp->newblock("no_hotels");
-                $tp->assign("hotel", $_POST['hotel']);
+
             }
         }
         echo $tp->getOutputContent();

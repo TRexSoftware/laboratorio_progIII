@@ -5,13 +5,36 @@ include("inc.includes.php");
 
 $db = new BaseDatos($config['dbhost'], $config['dbuser'], $config['dbpass'], $config['db']);
 
+$tpl = new TemplatePower("templates/index.html" );
+$tpl->prepare();
+$tpl->gotoBlock("_ROOT");
+
 //isset determina si una variable esta definida o es null
 //$_REQUEST tiene el contenido de get y post
 if ((!isset($_REQUEST["action"])) || ($_REQUEST["action"]==""))
-        $_REQUEST["action"]="Ingreso::main";
+{
+    $tpl->newBlock("contenido");
+    $mhotels = new MHotels();
+    $result = $mhotels->allhoteles();
+    if($result['found']) {
+        foreach($result['result'] as $r) {
+                    $tpl->newblock("hotels");
+                    $tpl->assign("idHotel", $r['id_hotel']);
+                    $tpl->assign("name", $r['nom_hotel']);
+                    $tpl->assign("prov", $r['provincia']);
+                    $tpl->assign("local", $r['localidad']);
+                    $tpl->assign("calle", $r['calle']);
+                    $tpl->assign("ncalle", $r['nro_calle']);
+                    $tpl->assign("tel", $r['telefono']);
+                    $tpl->assign("precio", $r['precio_persona']);
+                }
+    }
+    else  $tpl->newblock("no_hotels");
 
-if ($_REQUEST["action"]=="")
-        $html="";
+    $webapp = $tpl->getOutputContent();
+}
+
+
 else{
     if (!strpos($_REQUEST["action"],"::"))
         $_REQUEST["action"].="::main";
@@ -50,9 +73,6 @@ else{
         $html="La pagina solicitada no esta disponible.";
     }
 }
-$tpl = new TemplatePower("templates/index.html" );
-$tpl->prepare();
-$tpl->gotoBlock("_ROOT");
 
 if( !isset($_SESSION['user'])){
     $tpl->newBlock("iniciarsesion");

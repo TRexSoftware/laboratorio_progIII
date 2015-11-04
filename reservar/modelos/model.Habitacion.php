@@ -61,7 +61,7 @@ private $lista_camas = array();
     public function insertarHabitacion(){//insertar una habitacion en la tabla habitacion
 		global $db;
         $sql = "insert into habitacion (capacidad,disponibilidad,piso,ubicacion)
-                values ('$this->capacidad','$this->disponibilidad','$this->piso','$this->ubicacion')";
+                values ('$this->capacidad','1','$this->piso','$this->ubicacion')";
 
 	   $db->ejecutar($sql);
     }
