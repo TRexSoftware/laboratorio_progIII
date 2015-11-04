@@ -70,7 +70,7 @@ class Hotel_Controller {
             $tp->newBlock("reservar");
             $tp->assign("idHotel",$idHotel);
         }
-        if($_SESSION['user'] == null){
+        if(!isset($_SESSION['user'])){
             $tp->newBlock("iniciarSesion");
         }
 

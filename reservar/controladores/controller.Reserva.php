@@ -30,7 +30,7 @@ class Reserva_Controller{
 
     public function consultarReserva($cod_reserva){
         $reserva = new Reserva();
-        $result =
+
 
     }
 
