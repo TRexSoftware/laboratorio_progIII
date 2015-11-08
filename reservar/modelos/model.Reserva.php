@@ -59,7 +59,7 @@ class Reserva{
 
 	public function BuscarReserva($cod_reserva){ // este metodo tendrias que convocar para llenar los atributos de la clase reserva
         global $db;
-		$sql = "select * from reserva where(cod_reserva ='$cod_reserva')";
+		$sql = "select * from reservas where(cod_reserva ='$cod_reserva')";
         return $db->consultar($sql);
 
     }

@@ -98,14 +98,10 @@
                 <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');">
                     <img class="close" src="../resources/img/close.png"></a></p>
                 <h3>Mi reserva</h3>
-                <form action="index.php" method="post" name="mi_reserva">
+                <form action="index.php?action=Reserva::consultarReserva" method="post" name="mi_reserva">
                     <div>
                         <label>Nro solicitud compra</label><br>
-                        <input type="text" name="nro_solicitud" value="" maxlength="25"><br>
-                    </div>
-                    <div>
-                        <label>Email de compra</label><br>
-                        <input type="email" name="email_compra" value="" maxlength="50"><br>
+                        <input type="text" name="cod_reserva" value="" maxlength="25"><br>
                     </div>
                     <div>
                         <input type="submit" name="aceptar" value="Aceptar">
@@ -189,7 +185,7 @@
         <!-- Footer -->
         <footer>
             <div class="container fixed-bottom">
-                    <a href="https://github.com/TRexSoftware/laboratorio_progIII/">Laboratorio - Programación III.</a> Cabrera Sebastían - Sacaba Flavio - Acosta Gabriel
+                    <a href="https://github.com/TRexSoftware/laboratorio_progIII/tree/mvc">Laboratorio - Programación III.</a> Cabrera Sebastían - Sacaba Flavio - Acosta Gabriel
 
                 <!-- START BLOCK : noadministrador -->
                    <a class="admin" href="index.php?action=Administrador::sesion">Iniciar Sesion Administrador</a>
