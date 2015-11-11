@@ -1,5 +1,6 @@
 <?php
 class Administrador_Controller{
+
     public function sesion(){
         $tp = new TemplatePower("templates/administrador.html");
         $tp->prepare();
@@ -12,9 +13,13 @@ class Administrador_Controller{
         echo $tp->getOutputContent();
 
     }
+//$variable = stripslashes($_POST['']); // Elimino código malicioso
+//$variable = strip_tags($variable); // Elimino código malicioso
+//$variable = htmlentities($variable); // Elimino código HTML que pueda alterar el diseño de mi web.
     public function administrar(){
-        $user = $_POST['useradmin'];
-        $pass = $_POST['pass'];
+        $proteccion = new Proteccion();
+        $user = $proteccion->html($_POST['useradmin']);
+        $pass = $proteccion->html($_POST['pass']);
 
          $tp = new TemplatePower("templates/administrador.html");
         $tp->prepare();
@@ -48,17 +53,18 @@ class Administrador_Controller{
 
     }
 
-    //nuevo Hotel
+    //nuevo Hotels
     public function nuevoHotel(){
-        $nom_hotel = $_POST['nom_hotel'];
-        $provincia = $_POST['provincia'];
-        $localidad = $_POST['localidad'];
-        $calle = $_POST['calle'];
-        $nro_calle =  $_POST['nro_calle'];
-        $telefono =  $_POST['telefono'];
-        $precio_persona =  $_POST['precio_persona'];
-        $cant_imagenes = $_POST['cant_imagenes'];
-        $descripcion = $_POST['descripcion'];
+        $proteccion = new Proteccion();
+        $nom_hotel = $proteccion->html($_POST['nom_hotel']);
+        $provincia = $proteccion->html($_POST['provincia']);
+        $localidad = $proteccion->html($_POST['localidad']);
+        $calle = $proteccion->html($_POST['calle']);
+        $nro_calle =  $proteccion->html($_POST['nro_calle']);
+        $telefono =  $proteccion->html($_POST['telefono']);
+        $precio_persona = $proteccion->html($_POST['precio_persona']);
+        $cant_imagenes = $proteccion->html($_POST['cant_imagenes']);
+        $descripcion = $proteccion->html($_POST['descripcion']);
        $tp = new TemplatePower("templates/AltaHotel.html");
         $tp->prepare();
         $tp->gotoBlock("_ROOT");
@@ -78,7 +84,8 @@ class Administrador_Controller{
 
     //nuevaHabitacion
     public function nuevaHabitacion($id_hotel){
-        $cantidad = $_POST['cant_habitaciones'];
+        $proteccion = new Proteccion();
+        $cantidad = $proteccion->html($_POST['cant_habitaciones']);
 
         $tp = new TemplatePower("templates/AltaHotel.html");
         $tp->prepare();
@@ -93,6 +100,7 @@ class Administrador_Controller{
 
 
     public function habitacion($id_hotel,$max){
+        $proteccion = new Proteccion();
         $tp = new TemplatePower("templates/AltaHotel.html");
         $tp->prepare();
         $tp->gotoBlock("_ROOT");
@@ -102,10 +110,10 @@ class Administrador_Controller{
             $tp->newBlock("hotelcreado");
         }
         else{
-            $capacidad = $_POST['capacidad'];
-            $disponibilidad = $_POST['disponibilidad'];
-            $piso =  $_POST['piso'];
-            $ubicacion = $_POST['ubicacion'];
+            $capacidad = $proteccion->html($_POST['capacidad']);
+            $disponibilidad = $proteccion->html($_POST['disponibilidad']);
+            $piso =  $proteccion->html($_POST['piso']);
+            $ubicacion = $proteccion->html($_POST['ubicacion']);
 
 
             $habitacion = new Habitacion($capacidad,$disponibilidad,$piso, $ubicacion);
@@ -254,17 +262,7 @@ class Administrador_Controller{
         echo $tp->getOutputContent();
     }
 
-    public function modUsuario(){
-
-
-    }
 
 
 }
-
 ?>
-
-
-
-
-

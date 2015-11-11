@@ -1,8 +1,9 @@
 <?php
 class Usuario_Controller {
     public function sesion(){
-        $email = $_POST['email'];
-        $pass = $_POST['password'];
+        $proteccion = new Proteccion();
+        $email = $proteccion->html($_POST['email']);
+        $pass = $proteccion->html($_POST['password']);
 
 
         $tp = new TemplatePower("templates/sesion.html");
@@ -26,14 +27,15 @@ class Usuario_Controller {
          header("Location: index.php");
     }
      public function registrar(){
-        $nombre = $_POST['nombre'];
-        $apellido = $_POST['apellido'];
-        $sexo = $_POST['sexo'];
-        $fecha_nacimiento = $_POST['fecha_nacimiento'];
-        $direccion = $_POST['direccion'];
-        $email = $_POST['email'];
-        $dni = $_POST['dni'];
-        $pass = $_POST['password'];
+         $proteccion = new Proteccion();
+        $nombre = $proteccion->html($_POST['nombre']);
+        $apellido = $proteccion->html($_POST['apellido']);
+        $sexo = $proteccion->html($_POST['sexo']);
+        $fecha_nacimiento = $proteccion->html($_POST['fecha_nacimiento']);
+        $direccion = $proteccion->html($_POST['direccion']);
+        $email = $proteccion->html($_POST['email']);
+        $dni = $proteccion->html($_POST['dni']);
+        $pass = $proteccion->html($_POST['password']);
 
         $persona = new Usuario($email,$pass);
         $existe = $persona->existe();

@@ -1,6 +1,6 @@
 //VALIDA CAMPO OBLIGATORIO
 function validaVacio(valor){
-	if (valor===null || valor.length===0 || /^\s+$/.test(valor)){
+	if (valor==null || valor.length==0 || /^\s+$/.test(valor)){
 		alert("ERROR: Debe ingresar un valor obligatorio");
 		return false;
 	}
@@ -35,15 +35,15 @@ function validarSesion() {
 //VALIDAR CAMPOS DE REGISTRAR
 function validarRegistro() {
     //comprueba el campo NOMBRE
-    valor = document.getElementById("name").value;
+    valor = document.getElementById("nombre").value;
     if (validaVacio(valor)) {
-        foco("name");
+        foco("nombre");
         return false;
     } else {
         // Comprueba el campo APELLIDO
-        resultado = validaVacio(document.getElementById("lastn").value);
+        resultado = validaVacio(document.getElementById("apellido").value);
         if(resultado === false) {
-            foco("lastn");
+            foco("apellido");
             return false;
         } else {
             // Comprueba el campo SEXO
@@ -51,8 +51,8 @@ function validarRegistro() {
                 foco("sexo");
                 return false;
             } else {
-                if(validaVacio(document.getElementById("fecnac").value) === false) {
-                    foco("fecnac");
+                if(validaVacio(document.getElementById("fecha_nacimiento").value) === false) {
+                    foco("fecha_nacimiento");
                     return false;
                 } else {
                     if(validaVacio(document.getElementById("direccion").value) === false) {
@@ -63,8 +63,8 @@ function validarRegistro() {
                             foco("email");
                             return false;
                         } else {
-                            if(validaVacio(document.getElementById("pass").value) === false) {
-                                foco("pass");
+                            if(validaVacio(document.getElementById("password").value) === false) {
+                                foco("password");
                                 return false;
                             } else {
                                 if(validaVacio(document.getElementById("dni").value) === false) {

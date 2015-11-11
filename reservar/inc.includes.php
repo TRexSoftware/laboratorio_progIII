@@ -6,7 +6,7 @@ include ("modelos/model.Hotels.php");
 include ("modelos/model.Administrador.php");
 include ("modelos/model.Hotel.php");
 include ("modelos/model.Reserva.php");
-
+include ("modelos/model.Proteccion.php");
 
 include ("controladores/controller.Hoteles.php");
 include ("controladores/controller.Usuario.php");
