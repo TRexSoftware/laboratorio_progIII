@@ -1,0 +1,106 @@
+
+.contenido {
+    height:800px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+
+}
+.slider{
+    width: 29.5%;
+    height: 28%;
+    margin: auto;
+    overflow: hidden;
+    float: left;
+    position:relative;
+}
+.slider ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    height: 100%;
+    animation: cambio 15s infinite alternate;
+    animation-timing-function:ease-out;
+}
+.slider li{
+    width: 100%;
+     list-style: none;
+
+}
+.slider img{
+    width: 100%;
+    position:inherit;
+    margin-top: -30px;
+
+}
+.slider label{
+    color: white;
+    position:absolute;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    width: 60%;
+
+
+}
+
+@keyframes cambio {
+    0% { margin-left: 0;}
+    20% { margin-left: 0;}
+
+    25% { margin-left: -100%;}
+    45% { margin-left: -100%;}
+
+    50% { margin-left: -200%;}
+    70% { margin-left: -200%;}
+
+    75% { margin-left: -300%;}
+    100% { margin-left: -300%;}
+
+}
+
+
+#datos_hotel {
+   background-color: #FF5722;
+    width: 40%;;
+    height: 225px;
+    color: #FFFFFF;
+    margin: 0 5px;
+    float: left;
+}
+
+#datos_hotel form , h2{
+    padding-left: 10px;
+}
+input {
+    padding: 5px;
+    margin-bottom: 7px;
+}
+#lugar_hotel{
+    width: 90%;
+}
+.f_reserva {
+    margin-bottom: 0px;
+    width: 29%;
+}
+#datos_hotel form div div, select{
+    margin-bottom: 7px;
+}
+#label_salida {
+    margin-left: 21%;
+
+}
+#label_personas {
+    margin-left: 13.5%;
+}
+#select_personas {
+    margin-left: 25%;
+}
+
+.hoteles {
+    float:left;
+    margin-top: 10px;
+}
+.hoteles img{
+    width: 100%;
+}

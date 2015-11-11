@@ -1,0 +1,88 @@
+
+<div class="container">
+    <div class="page-header-custom">
+        <!-- START BLOCK : datosreserva -->
+         <form class="form-horizontal form-group" action="index.php?action=Reserva::ejecutarReserva::{id_hotel}" method="post" name="reserva">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="user">Cantidad de personas</label>
+                    <div class="col-md-5">
+                        <input name="cantidad" type="number" placeholder="" class="form-control input-md" required="">
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label class="col-md-4 control-label" for="user">Fecha llegada</label>
+                    <div class="col-md-5">
+                        <input name="llegada" type="date" placeholder="" class="form-control input-md" required="">
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label class="col-md-4 control-label" for="user">Fecha salida</label>
+                    <div class="col-md-5">
+                        <input name="salida" type="date" placeholder="" class="form-control input-md" required="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-4 ">
+                    <button id="singlebutton" name="aceptar" class="btn btn-primary" type= "submit">Ingresar</button>
+                  </div>
+                </div>
+         </form>
+
+        <!-- END BLOCK : datosreserva -->
+
+        <!-- START BLOCK : mensajereserva -->
+        <div class='alert alert-danger' role='alert'>Reserva Exitosa<br>Codigo de reserva: {cod_reserva}</div>
+        <!-- END BLOCK : mensajereserva -->
+
+       <!-- START BLOCK : generarreserva -->
+          <div class="container center-block">
+           <div class="form-group">
+                    <label class="col-md-4 control-label" >Codigo Reserva</label>
+                    <label>{cod_reserva}</label>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4 control-label" >Hotel</label>
+                    <label>{nom_hotel}</label>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4 control-label" >Nombre Cliente</label>
+                    <label>{nombre}</label>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4 control-label" >Apellido</label>
+                    <label>{apellido}</label>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4 control-label" >Email</label>
+                    <label>{email}</label>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4 control-label" >Fecha llegada</label>
+                    <label>{fec_llegada}</label>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4 control-label" >Fecha salida</label>
+                    <label>{fec_salida}</label>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4 control-label" >Fecha de reserva</label>
+                    <label>{fec_reserva}</label>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4 control-label" >Piso</label>
+                    <label>{piso}</label>
+            </div>
+            <div class="form-group">
+                    <label class="col-md-4 control-label" >Ubicacion</label>
+                    <label>{ubicacion}</label>
+            </div>
+        </div>
+        <a href="index.php">Inicio</a><br><br>
+
+       <!-- END BLOCK : generarreserva -->
+
+    </div>
+</div>

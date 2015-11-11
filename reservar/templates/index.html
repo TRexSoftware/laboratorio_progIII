@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="../resources/js/script.js"></script>
+        <script language="JavaScript" src="../resources/js/validacion.js"></script>    
+        <link rel="stylesheet" href="../resources/css/bootstrap.css">
+        <link rel="stylesheet" href="../resources/css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <title>Reservar</title>
+    </head>
+    <body>
+       <!-- PopUp SESION -->
+
+        <div id="popup_sesion" class="popup-position">
+            <div id="popup_contenido_sesion">
+                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');">
+                    <img class="close" src="../resources/img/close.png"></a></p>
+                <h3>Inicio Sesion</h3>
+                <form action="index.php?action=Usuario::sesion" method="post" name="inicio_sesion" onsubmit="return validarSesion()">
+                    <div>
+                        <label>Email</label><br>
+                        <input type="text" name="email" value="" maxlength="50" id="email"><br>
+                    </div>
+                    <div>
+                        <label>Contraseña</label><br>
+                        <input type="password" name="password" value="" maxlength="15" id="pass"><br>
+                    </div>
+                    <div>
+                        <input type="submit" name="aceptar" value="Aceptar">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- PopUp cerrar Sesion -->
+        <div id="popup_Cerrarsesion" class="popup-position">
+            <div id="popup_contenido_sesion">
+                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_Cerrarsesion');">
+                    <img class="close" src="../resources/img/close.png"></a></p>
+                <a href="index.php?action=Usuario::cerrarSesion"><h3>Cerrar Sesion</h3></a>
+
+            </div>
+        </div>
+
+
+       <!-- PopUp REGISTRO -->
+      <div id=popup_registro class="popup-position">
+            <div id="popup_contenido_registro">
+                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_registro');">
+                        <img class="close" src="../resources/img/close.png"></a></p>
+                <h3>Registrarse</h3>
+                <form action="index.php?action=Usuario::registrar" method="post" name="registro_usuario" onsubmit="return validarRegistro()">
+                    <div>
+                        <label>Nombre</label><br>
+                        <input type="text" name="nombre" value="" maxlength="15" id="name"><br>
+                    </div>
+                    <div>
+                        <label>Apellido</label><br>
+                        <input type="text" name="apellido" value="" maxlength="15" id="lastn"><br>
+                    </div>
+                    <div>
+                        <label>Sexo</label><br>   <!-- poner radio button -->
+                        <input type="text" name="sexo" value="" maxlength="1" id="sexo"><br>
+                    </div>
+                    <div>
+                        <label>Fecha de Nacimiento</label><br>
+                        <input type="date" name="fecha_nacimiento" value="" id="fecnac"><br>
+                    </div>
+                    <div>
+                        <label>Direccion</label><br>
+                        <input type="text" name="direccion" value="" maxlength="30" id="direccion"><br>
+                    </div>
+                    <div>
+                        <label>Correo Electronico</label><br>
+                        <input type="email" name="email" value="" maxlength="50" id="email"><br>
+                    </div>
+                    <div>
+                        <label>Contraseña</label><br>
+                        <input type="password" name="password" value="" maxlength="15" id="pass"><br>
+                    </div>
+                    <div>
+                        <label>Dni</label><br>
+                        <input type="number" name="dni" value="" maxlength="20" id="dni"><br>
+                    </div>
+
+                    <div>
+                        <input type="submit" name="aceptar" value="Aceptar">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--Popup Mi reserva -->
+        <div id=popup_mireserva class="popup-position">
+            <div id="popup_contenido_mireserva">
+                <p style="text-align: right;"><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');">
+                    <img class="close" src="../resources/img/close.png"></a></p>
+                <h3>Mi reserva</h3>
+                <form action="index.php?action=Reserva::consultarReserva" method="post" name="mi_reserva">
+                    <div>
+                        <label>Nro solicitud compra</label><br>
+                        <input type="text" name="cod_reserva" value="" maxlength="25"><br>
+                    </div>
+                    <div>
+                        <input type="submit" name="aceptar" value="Aceptar">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Barra de Navegacion -->
+        <nav class="navbar navbar-custom navbar-fixed-top" role="search">
+            <div class="container">
+                <div class="navbar-header">
+                    <span class="sr-only">Toggle navigation</span>
+                    <a class="navbar-brand" href="index.php"><img id="logo" src="../resources/img/logo.png"></a>
+                </div>
+                <form class="navbar-form navbar-left" role="search" method="post" action="index.php?action=Hotel::buscar">
+                    <div class="form-group">
+                        <input type="text" name="hotel" class="form-control" placeholder="Ingresa el hotel o ciudad...">
+                    </div>
+                    <button type="submit" class="btn btn-default">Buscar</button>
+                </form>
+                <div class="collapse navbar-collapse navHeaderCollapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- START BLOCK : iniciarsesion -->
+                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_sesion');"><img class="icon-nav" src="../resources/img/sesion.png" alt="login">Iniciar sesion</a></li>
+                        <!-- END BLOCK : iniciarsesion -->
+                        <!-- START BLOCK : sesion -->
+                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_Cerrarsesion');">{usuario}</a></li>
+                        <!-- END BLOCK : sesion -->
+                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_registro');"><img class="icon-nav" src="../resources/img/registrarse.png" alt="sign">Registrarse</a></li>
+
+                        <li><a href="javascript:void(0)" onclick="visibilidad('popup_mireserva');"><img class="icon-nav" src="../resources/img/reserva.png" alt="reserva">Mi reserva</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- START BLOCK : contenido -->
+
+
+<div class="container">
+    <div class="page-header-custom">
+        <table class="table">
+            <tr>
+                <th colspan="7" align="center"><b>Hoteles</b></th>
+            </tr>
+            <tr>
+                <th align="center">Nombre</th>
+                <th align="center">Provincia</th>
+                <th align="center">Localidad</th>
+                <th align="center">Calle</th>
+                <th align="center">Numero de Calle</th>
+                <th align="center">Telefono</th>
+                <th align="center">Precio</th>
+            </tr>
+            <!-- START BLOCK : hotels -->
+            <tr>
+                <td><a href = "index.php?action=Hotel::hotel::{idHotel}">{name}</a></td>
+                <td>{prov}</td>
+                <td>{local}</td>
+                <td>{calle}</td>
+                <td>{ncalle}</td>
+                <td>{tel}</td>
+                <td>{precio}</td>
+            </tr>
+            <!-- END BLOCK : hotels -->
+            <!-- START BLOCK : error -->
+            <div class='alert alert-danger' role='alert'>{msg}.</div>
+            <!-- END BLOCK : error -->
+            <!-- START BLOCK : no_hotels -->
+            <div class='alert alert-warning' role='alert'>No se han encontrado coincidencias.</div>
+            <!-- END BLOCK : no_hotels -->
+        </table>
+    </div>
+</div>
+
+
+        <!-- END BLOCK : contenido -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="container fixed-bottom">
+                    <a href="https://github.com/TRexSoftware/laboratorio_progIII/tree/mvc">Laboratorio - Programación III.</a> Cabrera Sebastían - Sacaba Flavio - Acosta Gabriel
+
+                <!-- START BLOCK : noadministrador -->
+                   <a class="admin" href="index.php?action=Administrador::sesion">Iniciar Sesion Administrador</a>
+                <!-- END BLOCK : noadministrador -->
+                <!-- START BLOCK : administrador -->
+                    <a class="admin" href="index.php?action=Administrador::sesion">Administrador : {administrador}</a><br>
+                    <a class="admin" href="index.php?action=Administrador::cerraradmin">Cerrar Sesion Administrador</a>
+                <!-- END BLOCK : administrador -->
+                </div>
+        </footer>
+
+    </body>
+</html>
